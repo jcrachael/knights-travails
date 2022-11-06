@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAEA;IACI,SAAS,EAAE,UAAU;IACrB,wDAAwD;AAC5D;;AAEA;IACI,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sCAAsC;IACtC,mCAAmC;IACnC,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,sBAAsB;IACtB,YAAY;IACZ,WAAW;IACX,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,uCAAuC;AAC3C;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,cAAc;IACd,WAAW;IACX,YAAY;AAChB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');\r\n\r\n* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 100%;\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAEA;IACI,SAAS,EAAE,UAAU;IACrB,wDAAwD;AAC5D;;AAEA;IACI,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sCAAsC;IACtC,mCAAmC;IACnC,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,sBAAsB;IACtB,eAAe;IACf,cAAc;IACd,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,uCAAuC;AAC3C;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,cAAc;IACd,WAAW;IACX,YAAY;AAChB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');\r\n\r\n* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -560,14 +560,61 @@ function printBoard(board) {
             cell.setAttribute('data-coord', `${board[i][j]}`);
             cell.innerHTML = `<p class="cell-text">${board[i][j]}</p>`;
             div.appendChild(cell);
-        }
-    }
+        };
+    };
+};
+
+function resetCells() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(function(cell) {
+        // Get the coord/index number
+        let coord = cell.getAttribute('data-coord');
+        cell.style.backgroundColor = 'white';
+        cell.innerText = coord;
+    });
 }
 
 function updateComment(message) {
     const comment = document.getElementById('comment');
     comment.innerText = message;
-}
+};
+
+function playTurn(graph, start, end) {
+    // Call the function to move from start to end and get the moves required
+    let moves = (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.knightMoves)(graph, start, end);
+    // remove the first and last item from moves
+    let firstMove = moves.shift();
+    let lastMove = moves.pop();
+    let firstMoveCell = document.querySelector(`[data-coord="${firstMove}"]`);
+    let lastMoveCell = document.querySelector(`[data-coord="${lastMove}"]`);
+    // colour first move cell
+    firstMoveCell.style.backgroundColor = 'yellowgreen';
+    
+    firstMoveCell.innerText = 'Start'
+    let interval = 500;
+    // if moves.length > 0, colour in all the squares
+    if (moves.length > 0) {
+        // iterate through moves
+        moves.forEach( index => {
+            let thisIndex = moves.indexOf(index);
+            setTimeout(() => {
+                let moveCell = document.querySelector(`[data-coord="${index}"]`);
+
+                moveCell.style.backgroundColor = 'cornflowerblue';
+                
+                moveCell.innerText = `Move ${thisIndex + 1}`
+            }, interval * (thisIndex + 1))
+        });
+        
+        interval = interval * (moves.length + 1);
+    };
+    setTimeout(function() {
+        lastMoveCell.style.backgroundColor = '#eb4934';
+    
+        lastMoveCell.innerText = `End
+        (Move ${moves.length + 1})`;
+    }, interval);
+};
 
 function beginGame() {
     // Declare variables
@@ -591,14 +638,11 @@ function beginGame() {
     // Start and end vertices set to null
     let start = null;
     let end = null;
-
     // Print the board and comment
     updateComment(welcomeMessage);
     printBoard(board);
-
     // Get all the cells
     const cells = document.querySelectorAll('.cell');
-
     // Iterate through each cell 
     cells.forEach(function(cell) {
         cell.addEventListener('click', function() {   
@@ -611,6 +655,7 @@ function beginGame() {
                 cells.forEach(function(cell) {
                     cell.style.backgroundColor = 'white';
                 });
+                resetCells();
                 start = thisVertex;
                 cell.style.backgroundColor = 'yellowgreen';
                 updateComment();
@@ -618,28 +663,25 @@ function beginGame() {
 
                 ` + 'Please select an ending square...');
                 return start
-
-            // Otherwise, set this coord to end
+            // Otherwise, set this coord to end and call the BFS method
             } else if (start !== null && end === null) {
                 let end = thisVertex;
-                cell.style.backgroundColor = '#eb4934';
-                updateComment('Start: ' + start.coord + `
-                ` +'End: ' + end.coord + `
+                updateComment(`Start: ${start.coord} -> End: ${end.coord}
                 
-                ` + `Moving the Knight from [${start.coord}] to [${end.coord}]...`);
-                
-                // Call the function to move from start to end
-                (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.knightMoves)(boardGraph, start, end);
+                Moving the Knight from [${start.coord}] to [${end.coord}]...`); 
 
+                // Make the traversal
+                setTimeout(playTurn, 1000, boardGraph, start, end);
                 // reset start to null for next click
                 start = null;
+                
                 return;
-            } 
-          
+            };
         });
     });
-    
-}
+
+
+};
 
 
 
@@ -757,50 +799,33 @@ class Graph {
         this.list = list;
     }
 
-    breadthFirstTraverse(start, end) {
-        // DEBUG console logs
-        console.log('Traversing the graph from node ' + start + ' to node ' + end);
+    breadthFirstSearch(start, end) {
+
+        let moves= [];
 
         // set all vertices' 'visited' and 'queued' properties to false
         for (let i = 0; i < this.list.length; i++) {
             this.list[i].visited = false;
             this.list[i].queued = false;
         }
-
-
         // Get the right start vertex
         let startVertex = this.list[start];
         let endVertex = this.list[end];
-
-
-        console.log('start vertex: ' + startVertex.coord);
-
-        console.log('end vertex: ' + endVertex.coord);
-
         // Make a queue
         let queue = [];
-
-      
-
         // Add start node to queue and mark it as queued
         startVertex.queued = true;
         startVertex.level = 0;
         queue.push(startVertex);
-        
-  
         // While items are in the queue
         while (queue.length > 0) {
-            
             // Get the first item in the queue
             let thisNode = queue[0];
-            
             // Mark this item as visited
             thisNode.visited = true;
-
             // For each of this item's neighbours
             for (let i = 0; i < thisNode.neighbours.length; i++) {
                 let thisNodeNeighbour = thisNode.neighbours[i];
-                
                 // If this neighbour has been visited or is already queued, skip it
                 if (thisNodeNeighbour.visited === false && 
                     thisNodeNeighbour.queued === false &&
@@ -810,78 +835,78 @@ class Graph {
                     thisNodeNeighbour.level = thisNode.level + 1;
                     thisNodeNeighbour.queued = true;
                     queue.push(thisNodeNeighbour);
-                } 
-            }
+                };
+            };
             // Remove the first item from the queue
             queue[0].queued = false;
             queue.splice(0,1);
-            
             // if the current node is our target, end traversal
             if (thisNode === endVertex) {
-
                 if (thisNode.level === 0) {
+                    moves = [startVertex.coord];    
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
-                    You were already here!`)
+                    You were already here!`);
                 }
-
                 if (thisNode.level === 1) {
+                    moves = [startVertex.coord, thisNode.coord];
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} move!
 
-                    Move: ${startVertex.coord} -> ${endVertex.coord}`);
+                    Move: ${startVertex.coord} -> ${endVertex.coord}`);          
                 } else if (thisNode.level === 2) {
+                    moves = [startVertex.coord, thisNode.parent.coord, thisNode.coord];
                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                    You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 3) {
-    
+                    moves = [startVertex.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 4) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 5) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];                   
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 6) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 7) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
-                } 
-                return;
-            } 
-        }
+                };
+            };
+        };
         // End traversal after going through all nodes
-        console.log('No possible moves found. Finished traversal!');
-}
+        return moves;
+    };
 
-    breadthFirstSearch() {
-        // perform breadth first search to find the shortest path using 
-        // Dijkstra's algorithm: 
-        // (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-        // For a given source node in the graph, the algorithm finds the
-        // shortest path between that node and every other
+    getMoves() {
+        return moves;
     }
 };
 
@@ -919,8 +944,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _graph__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./graph */ 304);
 
 
-
-
 function makeVertices() {
     // Instantiate an empty array to hold the Vertices
     let vertexList = [];
@@ -940,8 +963,7 @@ function makeVertices() {
         }
     }
     return vertexList;
-}
-
+};
 
 function makeGraph() {
     // make list of vertices
@@ -950,15 +972,15 @@ function makeGraph() {
     const boardGraph = new _graph__WEBPACK_IMPORTED_MODULE_0__.Graph(64, vertexList);
     return boardGraph;
 
-}
-
+};
 
 function knightMoves(graph, start, end) {
     let traverseStart = parseInt(start.coord);
     let traverseEnd = parseInt(end.coord);
     // Call the traverse function
-    graph.breadthFirstTraverse(traverseStart, traverseEnd);
-}
+    let moves = graph.breadthFirstSearch(traverseStart, traverseEnd);
+    return moves;
+};
 
 
 
@@ -970,4 +992,4 @@ function knightMoves(graph, start, end) {
 /******/ var __webpack_exports__ = (__webpack_exec__(138));
 /******/ }
 ]);
-//# sourceMappingURL=bundle-fee53d4f8575f4fd480d.js.map
+//# sourceMappingURL=bundle-4dff66027fefa7e4262b.js.map
