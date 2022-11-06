@@ -1,27 +1,52 @@
 import { updateComment } from './displayControls';
 import { adjacencyList, Graph, Vertex } from './graph'
 
+
+function makeVertices() {
+    // Instantiate an empty array to hold the Vertices
+    let vertexList = [];
+    // Make a Vertex for each key in adjacencyList, with neighbours set to the values for that key
+    for (const index in adjacencyList) {
+        const vertex = new Vertex(index);
+        vertexList.push(vertex);
+    }
+    // For each Vertex in vertexList, add its neighbours
+    for (const vertex in vertexList) {
+        const thisVertex = vertexList[vertex];
+        // For each index in this vertex's adjacency list
+        for (const index in adjacencyList[vertex]) {
+            // Add the vertex with this coord to thisVertex's neighbours list
+            const neighbourVertex = vertexList[adjacencyList[vertex][index]];
+            thisVertex.neighbours.push(neighbourVertex);
+        }
+    }
+    return vertexList;
+}
+
+
+function makeGraph() {
+    // make list of vertices
+    let vertexList = makeVertices();
+    // make a graph to represent the board
+    const boardGraph = new Graph(64, vertexList);
+
+    return boardGraph;
+
+}
+
+
 function knightMoves(start, end) {
-
-    // get the right adjacency list for the start coord
-    let startNeighbours = adjacencyList[start.toString()];
-    let endNeighbours = adjacencyList[end.toString()];
-
-    // TODO: instantiate the Graph with all nodes, then refactor below to grab the
-    // required nodes, rather than making new ones
-    // make a vertex node from the start point
-    const startVertex = new Vertex(start, startNeighbours);
-    const endVertex = new Vertex(end, endNeighbours);
-
     // DEBUG: console logging
-    console.log('Starting vertex is: ' + startVertex.coord);
-    console.log('Starting vertex\'s neighbours are: ' + startVertex.neighbours);
-
-    console.log('Ending vertex is: ' + endVertex.coord);
-    console.log('Ending vertex\'s neighbours are: ' + endVertex.neighbours);
-
+    console.log('Starting vertex\'s neighbours are: ');
+    for (let i = 0; i < start.neighbours.length; i++) {
+        console.log(start.neighbours[i].coord)
+    }
+    console.log('Ending vertex\'s neighbours are: ');
+    for (let i = 0; i < end.neighbours.length; i++) {
+        console.log(end.neighbours[i].coord)
+    }
 
     return
 }
 
-export { knightMoves }
+export { knightMoves, makeGraph }

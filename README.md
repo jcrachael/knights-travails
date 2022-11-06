@@ -10,32 +10,32 @@ Projcet sourced from [The Odin Project JavaScript course](https://www.theodinpro
 ## About
 On any given move, a Knight can move 2 spaces in one direction and 1 space in the perpendicular direction (i.e., 2x+1y OR 2y+1x (or their negatives)). 
 
-For example, if a Knight is on square `[4,4]`, its possible moves are:
-* `[2,5]`
-* `[3,6]`
-* `[5,6]`
-* `[6,5]`
-* `[6,3]`
-* `[5,2]`
-* `[3,2]`
-* `[2,3]` 
+For example, if a Knight is on square `36`, its possible moves are:
+* `21`
+* `30`
+* `46`
+* `53`
+* `51`
+* `42`
+* `26`
+* `19` 
 
 The `board` will be a 2-dimensional array:
 
 ```javascript
 board = [
-        [0,0], [0,1], [0,2], [0,3], [0,4], [0,5], [0,6], [0,7],
-        [1,0], [1,1], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7],
-        [2,0], [2,1], [2,2], [2,3], [2,4], [2,5], [2,6], [2,7],
-        [3,0], [3,1], [3,2], [3,3], [3,4], [3,5], [3,6], [3,7],
-        [4,0], [4,1], [4,2], [4,3], [4,4], [4,5], [4,6], [4,7],
-        [5,0], [5,1], [5,2], [5,3], [5,4], [5,5], [5,6], [5,7],
-        [6,0], [6,1], [6,2], [6,3], [6,4], [6,5], [6,6], [6,7],
-        [7,0], [7,1], [7,2], [7,3], [7,4], [7,5], [7,6], [7,7]
+         0,  1,  2,  3,  4,  5,  6,  7,
+         8,  9, 10, 11, 12, 13, 14, 15,
+        16, 17, 18, 19, 20, 21, 22, 23,
+        24, 25, 26, 27, 28, 29, 30, 31,
+        32, 33, 34, 35, 36, 37, 38, 39,
+        40, 41, 42, 43, 44, 45, 46, 47,
+        48, 49, 50, 51, 52, 53, 54, 55,
+        56, 57, 58, 59, 60, 61, 62, 63
         ]
 ```
 
-The `function knightMoves(start, end)` will return the shortest possible route from `start` coordinate (an array e.g. `[1,2]`) and an `end` coordinate (e.g. `[3,3]`).
+The `function knightMoves(start, end)` will return the shortest possible route from `start` coordinate (an array e.g. `10`) and an `end` coordinate (e.g. `27`).
 
 All of the possible moves the Knight could make will be stored as children in a tree.
 
@@ -45,7 +45,7 @@ A path between two vertices is the `path` of known edges between vertex `u` and 
 
 We usually denote the vertex set by `V` and the edge set by `E`. We often want to use the sizes of the vertex and its edge sets when running an algorithm on a graph. We typically number the vertices in `V` from `0` to `(V.length - 1)`.
 
-We can represent our graph with an `adjacency list` where for each vertex `i`, store an array of the vertices adjacent to it. We typically have one adjacency list per vertex. For example, our vertex `[0,0]` would have an adjacency list of `[[1,2], [2,1]]`. Each vertex's adjacency list will be stored as a key:value pair in a dictionary-type object containg all of the vertices' adjacency lists.
+We can represent our graph with an `adjacency list` where for each vertex `i`, store an array of the vertices adjacent to it. We typically have one adjacency list per vertex. For example, our vertex `[0,0]` would have an adjacency list of `[10, 17]`. Each vertex's adjacency list will be stored as a key:value pair in a dictionary-type object containg all of the vertices' adjacency lists.
 
 We can now get to each vertex's adjacency list by indexing into the adjacency list array. To find out whether an edge `(i, j)` is present in the graph, we go to `i`'s adjacency list and look for `j`. We can use a for loop to iterate through the vertices in the `adjacencyList` array, so that `adjacencyList[i]` is an array containing the neighbours of vertex `i`. Then, loop through `adjacencyList[i]` so that `adjacencyList[i][j]` returns each adjacent vertex.
 
@@ -115,7 +115,7 @@ function knightMoves(start, end) {
                     // 2.5.2.1.2) queue this adjacent vertex
             // 2.5.3) insert all unvisited neighbours of the vertex into the queue
     
-    // 3) Output the shortest path from start to end, e.g. "Start: [3,3] -> [4,5] -> [2,4] -> End: [4,3]"
+    // 3) Output the shortest path from start to end, e.g. "Start: 27 -> 37 -> 20 -> End: 35"
 }
 ```
 
