@@ -8,17 +8,7 @@ Projcet sourced from [The Odin Project JavaScript course](https://www.theodinpro
 
 
 ## About
-On any given move, a Knight can move 2 spaces in one direction and 1 space in the perpendicular direction (i.e., 2x+1y OR 2y+1x (or their negatives)). 
-
-For example, if a Knight is on square `36`, its possible moves are:
-* `21`
-* `30`
-* `46`
-* `53`
-* `51`
-* `42`
-* `26`
-* `19` 
+On any given move, a Knight can move 2 spaces in one direction and 1 space in the perpendicular direction. For example, if a Knight is on square `36`, its possible moves are `19`, `21`, `26`, `30`, `42`, `46`, `51` and `53`.
 
 The `board` will be a 2-dimensional array:
 
@@ -37,9 +27,9 @@ board = [
 
 The `function knightMoves(start, end)` will return the shortest possible route from `start` coordinate (an array e.g. `10`) and an `end` coordinate (e.g. `27`).
 
-All of the possible moves the Knight could make will be stored as children in a tree.
+The game board will be stored as a `Graph` data structure, with each square of the board being a `Vertex`, and each possible move from one square to another being an `Edge`. This graph is unweighted, undirected, connected and cyclic.
 
-The tree is a graph and each possible move (Node) is a vertex (`v`) of the graph. Two neighbouring nodes on the tree (called `u` and `v` here) share an undirected edge. An undirected edge `(u, v)` is the same as `(v, u)`. Each edge is incident on the two vertices (`u` and `v`), and the vertices connected by the edge are adjacent or neighbours. The number of edges incident on any given vertex is the degree of that vertex.
+Two neighbouring nodes on the tree (called `u` and `v` here) share an undirected edge. An undirected edge `(u, v)` is the same as `(v, u)`. Each edge is incident on the two vertices (`u` and `v`), and the vertices connected by the edge are adjacent or neighbours. The number of edges incident on any given vertex is the degree of that vertex.
 
 A path between two vertices is the `path` of known edges between vertex `u` and vertex `v`. The path between two vertices with the fewest edges is the `shortest path`.
 
@@ -51,75 +41,9 @@ We can now get to each vertex's adjacency list by indexing into the adjacency li
 
 We will use a Breadth-First Search (BFS) algorithm to search the graph. To avoid processing any vertex more than once, we divide the vertices into two categories, visited and not visited, using a boolean. It is assumed that all vertices are reachable from the starting vertex.
 
-## Pseudocode
-
-Sample Graph class:
-
-```javascript
-class Graph { 
-        constructor() {
-            // build the root
-            this.root = this.buildGraph();
-
-        buildGraph() {
-            // build this Graph from the given vertex's adjacencyList array
-        }
-
-        breadthFirstSearch() {
-            // perform breadth first search to find the shortest path using 
-            // Dijkstra's algorithm: 
-            // (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-            // For a given source node in the graph, the algorithm finds the
-            // shortest path between that node and every other
-        }
-    }
-}
-```
-
-Sample vertex class:
-
-```javascript
-class Vertex {
-    constructor(coord, array) {
-        // set the coordinate of this vertex
-        this.coord = coord;
-        // get this vertex's adjacency list
-        this.neighbours = array;
-    }
-}
-
-const node = new Vertex(coord, adjacencyList);
-
-```
-
-
-Sample knightMoves function:
-
-```javascript
-function knightMoves(start, end) {
-    
-    // 1) make a Graph from start vertex where all the child Nodes are adjacent 
-    // vertices of start, e.g. const newGraph = new Graph(array)
-
-    // 2) use a breadth-first search algorithm to find the shortest path between 
-    // start vertex and end vertex, e.g. newGraph.breadthFirstSearch(this, s)
-        // 2.1) mark all vertices as not visited
-        // 2.2) declare a queue
-        // 2.3) enqueue the starting vertex
-        // 2.4) mark the starting vertex's property 'visited' to true
-        // 2.5) while queue:
-            // 2.5.1) dequeue a vertex from the queue, save it as `s` and print it
-            // 2.5.2) get all adjacent vertices of the dequeued vertex `s`
-                // 2.5.2.1) if an adjacent vertex has not been visited
-                    // 2.5.2.1.1) mark this adjacent vertex as visited
-                    // 2.5.2.1.2) queue this adjacent vertex
-            // 2.5.3) insert all unvisited neighbours of the vertex into the queue
-    
-    // 3) Output the shortest path from start to end, e.g. "Start: 27 -> 37 -> 20 -> End: 35"
-}
-```
-
-
+## To-dos
+2. Feature: make each square in the returned moves display as a contrasting colour after a graph traversal
+3. Feature: make the squares display with their chessboard reference (i.e., A1, E5) rather than their index number (coord)
 
 
 

@@ -158,44 +158,58 @@ class Graph {
             // if the current node is our target, end traversal
             if (thisNode === endVertex) {
 
+                if (thisNode.level === 0) {
+                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                    You were already here!`)
+                }
+
                 if (thisNode.level === 1) {
-                    updateComment(`You made it in ${thisNode.level} move!
+                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                    You made it in ${thisNode.level} move!
 
                     Move: ${startVertex.coord} -> ${endVertex.coord}`);
-
                 } else if (thisNode.level === 2) {
-                   updateComment(`You made it in ${thisNode.level} moves!
+                   updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                   You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
-
                 } else if (thisNode.level === 3) {
     
-                    updateComment(`You made it in ${thisNode.level} moves!
+                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                    You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
-
                 } else if (thisNode.level === 4) {
-                    updateComment(`You made it in ${thisNode.level} moves!
+                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                    You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
-
                 } else if (thisNode.level === 5) {
-                    updateComment(`You made it in ${thisNode.level} moves!
+                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                    You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 6) {
-                    updateComment(`You made it in ${thisNode.level} moves!
+                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                    You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 7) {
-                    updateComment(`You made it in ${thisNode.level} moves!
+                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
+                    
+                    You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } 
-
                 return;
             } 
-            
         }
         // End traversal after going through all nodes
         console.log('No possible moves found. Finished traversal!');

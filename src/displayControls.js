@@ -70,17 +70,17 @@ function beginGame() {
                 start = thisVertex;
                 cell.style.backgroundColor = 'yellowgreen';
                 updateComment();
-                updateComment('Starting cell: ' + start.coord + `
+                updateComment('Start: ' + start.coord + `
 
-                ` + 'Please select an ending cell...');
+                ` + 'Please select an ending square...');
                 return start
 
             // Otherwise, set this coord to end
             } else if (start !== null && end === null) {
                 let end = thisVertex;
-                cell.style.backgroundColor = 'red';
-                updateComment('Starting cell: ' + start.coord + `
-                ` +'Ending cell: ' + end.coord + `
+                cell.style.backgroundColor = '#eb4934';
+                updateComment('Start: ' + start.coord + `
+                ` +'End: ' + end.coord + `
                 
                 ` + `Moving the Knight from [${start.coord}] to [${end.coord}]...`);
                 
