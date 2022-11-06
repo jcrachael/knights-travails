@@ -25,25 +25,24 @@ board = [
         ]
 ```
 
-The `function knightMoves(start, end)` will return the shortest possible route from `start` coordinate (an array e.g. `10`) and an `end` coordinate (e.g. `27`).
+The `function knightMoves(start, end)` will return the shortest possible route from `start` coordinate (a `Vertex` object with a `coord` property with its index e.g. `10` as the property's value) and an `end` coordinate (e.g. `Vertex` with `coord` of value `27`).
 
-The game board will be stored as a `Graph` data structure, with each square of the board being a `Vertex`, and each possible move from one square to another being an `Edge`. This graph is unweighted, undirected, connected and cyclic.
+The chessboard will be stored as a `Graph` data structure, with each square of the board being a `Vertex`, and each possible move from one square to another being an `Edge`. This graph is unweighted, undirected, connected and cyclic.
 
-Two neighbouring nodes on the tree (called `u` and `v` here) share an undirected edge. An undirected edge `(u, v)` is the same as `(v, u)`. Each edge is incident on the two vertices (`u` and `v`), and the vertices connected by the edge are adjacent or neighbours. The number of edges incident on any given vertex is the degree of that vertex.
+Two neighbouring vertices on the graph (called `u` and `v` here) share an undirected edge (an undirected edge `(u, v)` is the same as `(v, u)`). Each edge is incident on the two vertices (`u` and `v`), and the vertices connected by the edge are neighbours. The number of edges incident on any given vertex is the degree of that vertex.
 
 A path between two vertices is the `path` of known edges between vertex `u` and vertex `v`. The path between two vertices with the fewest edges is the `shortest path`.
 
-We usually denote the vertex set by `V` and the edge set by `E`. We often want to use the sizes of the vertex and its edge sets when running an algorithm on a graph. We typically number the vertices in `V` from `0` to `(V.length - 1)`.
+We usually denote the vertex set by `V` and the edge set by `E`, so a graph `G` is denoted by `G(V,E)`. We often want to use the sizes of the vertex and its edge sets when running an algorithm on a graph. We typically number the vertices in `V` from `0` to `(V.length - 1)`.
 
-We can represent our graph with an `adjacency list` where for each vertex `i`, store an array of the vertices adjacent to it. We typically have one adjacency list per vertex. For example, our vertex `[0,0]` would have an adjacency list of `[10, 17]`. Each vertex's adjacency list will be stored as a key:value pair in a dictionary-type object containg all of the vertices' adjacency lists.
+We can represent our graph with an adjacency, where for each vertex `v`, we store an array of the vertices adjacent to it. We typically have one adjacency list per vertex. For example, our vertex `0` would have an adjacency list of `[10, 17]`. Each vertex's adjacency list will be stored as a `key:value` pair in an `adjacencyList` object containg all of the vertices' adjacency lists.
 
-We can now get to each vertex's adjacency list by indexing into the adjacency list array. To find out whether an edge `(i, j)` is present in the graph, we go to `i`'s adjacency list and look for `j`. We can use a for loop to iterate through the vertices in the `adjacencyList` array, so that `adjacencyList[i]` is an array containing the neighbours of vertex `i`. Then, loop through `adjacencyList[i]` so that `adjacencyList[i][j]` returns each adjacent vertex.
+We access each vertex's adjacency list by indexing into the corresponding adjacency list array. To find out whether an edge `(i, j)` is present in the graph, we go to `i`'s adjacency list and look for `j`.
 
 We will use a Breadth-First Search (BFS) algorithm to search the graph. To avoid processing any vertex more than once, we divide the vertices into two categories, visited and not visited, using a boolean. It is assumed that all vertices are reachable from the starting vertex.
 
 ## To-dos
-2. Feature: make each square in the returned moves display as a contrasting colour after a graph traversal
-3. Feature: make the squares display with their chessboard reference (i.e., A1, E5) rather than their index number (coord)
+1. Feature: make the squares display with their chessboard reference (i.e., A1, E5) rather than their index number (coord)
 
 
 

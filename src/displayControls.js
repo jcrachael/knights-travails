@@ -16,14 +16,61 @@ function printBoard(board) {
             cell.setAttribute('data-coord', `${board[i][j]}`);
             cell.innerHTML = `<p class="cell-text">${board[i][j]}</p>`;
             div.appendChild(cell);
-        }
-    }
+        };
+    };
+};
+
+function resetCells() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(function(cell) {
+        // Get the coord/index number
+        let coord = cell.getAttribute('data-coord');
+        cell.style.backgroundColor = 'white';
+        cell.innerText = coord;
+    });
 }
 
 function updateComment(message) {
     const comment = document.getElementById('comment');
     comment.innerText = message;
-}
+};
+
+function playTurn(graph, start, end) {
+    // Call the function to move from start to end and get the moves required
+    let moves = knightMoves(graph, start, end);
+    // remove the first and last item from moves
+    let firstMove = moves.shift();
+    let lastMove = moves.pop();
+    let firstMoveCell = document.querySelector(`[data-coord="${firstMove}"]`);
+    let lastMoveCell = document.querySelector(`[data-coord="${lastMove}"]`);
+    // colour first move cell
+    firstMoveCell.style.backgroundColor = 'yellowgreen';
+    
+    firstMoveCell.innerText = 'Start'
+    let interval = 500;
+    // if moves.length > 0, colour in all the squares
+    if (moves.length > 0) {
+        // iterate through moves
+        moves.forEach( index => {
+            let thisIndex = moves.indexOf(index);
+            setTimeout(() => {
+                let moveCell = document.querySelector(`[data-coord="${index}"]`);
+
+                moveCell.style.backgroundColor = 'cornflowerblue';
+                
+                moveCell.innerText = `Move ${thisIndex + 1}`
+            }, interval * (thisIndex + 1))
+        });
+        
+        interval = interval * (moves.length + 1);
+    };
+    setTimeout(function() {
+        lastMoveCell.style.backgroundColor = '#eb4934';
+    
+        lastMoveCell.innerText = `End
+        (Move ${moves.length + 1})`;
+    }, interval);
+};
 
 function beginGame() {
     // Declare variables
@@ -47,14 +94,11 @@ function beginGame() {
     // Start and end vertices set to null
     let start = null;
     let end = null;
-
     // Print the board and comment
     updateComment(welcomeMessage);
     printBoard(board);
-
     // Get all the cells
     const cells = document.querySelectorAll('.cell');
-
     // Iterate through each cell 
     cells.forEach(function(cell) {
         cell.addEventListener('click', function() {   
@@ -67,6 +111,7 @@ function beginGame() {
                 cells.forEach(function(cell) {
                     cell.style.backgroundColor = 'white';
                 });
+                resetCells();
                 start = thisVertex;
                 cell.style.backgroundColor = 'yellowgreen';
                 updateComment();
@@ -74,28 +119,25 @@ function beginGame() {
 
                 ` + 'Please select an ending square...');
                 return start
-
-            // Otherwise, set this coord to end
+            // Otherwise, set this coord to end and call the BFS method
             } else if (start !== null && end === null) {
                 let end = thisVertex;
-                cell.style.backgroundColor = '#eb4934';
-                updateComment('Start: ' + start.coord + `
-                ` +'End: ' + end.coord + `
+                updateComment(`Start: ${start.coord} -> End: ${end.coord}
                 
-                ` + `Moving the Knight from [${start.coord}] to [${end.coord}]...`);
-                
-                // Call the function to move from start to end
-                knightMoves(boardGraph, start, end);
+                Moving the Knight from [${start.coord}] to [${end.coord}]...`); 
 
+                // Make the traversal
+                setTimeout(playTurn, 1000, boardGraph, start, end);
                 // reset start to null for next click
                 start = null;
+                
                 return;
-            } 
-          
+            };
         });
     });
-    
-}
 
 
-export { beginGame, updateComment }
+};
+
+
+export { beginGame, updateComment };

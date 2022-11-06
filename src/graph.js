@@ -96,50 +96,33 @@ class Graph {
         this.list = list;
     }
 
-    breadthFirstTraverse(start, end) {
-        // DEBUG console logs
-        console.log('Traversing the graph from node ' + start + ' to node ' + end);
+    breadthFirstSearch(start, end) {
+
+        let moves= [];
 
         // set all vertices' 'visited' and 'queued' properties to false
         for (let i = 0; i < this.list.length; i++) {
             this.list[i].visited = false;
             this.list[i].queued = false;
         }
-
-
         // Get the right start vertex
         let startVertex = this.list[start];
         let endVertex = this.list[end];
-
-
-        console.log('start vertex: ' + startVertex.coord);
-
-        console.log('end vertex: ' + endVertex.coord);
-
         // Make a queue
         let queue = [];
-
-      
-
         // Add start node to queue and mark it as queued
         startVertex.queued = true;
         startVertex.level = 0;
         queue.push(startVertex);
-        
-  
         // While items are in the queue
         while (queue.length > 0) {
-            
             // Get the first item in the queue
             let thisNode = queue[0];
-            
             // Mark this item as visited
             thisNode.visited = true;
-
             // For each of this item's neighbours
             for (let i = 0; i < thisNode.neighbours.length; i++) {
                 let thisNodeNeighbour = thisNode.neighbours[i];
-                
                 // If this neighbour has been visited or is already queued, skip it
                 if (thisNodeNeighbour.visited === false && 
                     thisNodeNeighbour.queued === false &&
@@ -149,78 +132,78 @@ class Graph {
                     thisNodeNeighbour.level = thisNode.level + 1;
                     thisNodeNeighbour.queued = true;
                     queue.push(thisNodeNeighbour);
-                } 
-            }
+                };
+            };
             // Remove the first item from the queue
             queue[0].queued = false;
             queue.splice(0,1);
-            
             // if the current node is our target, end traversal
             if (thisNode === endVertex) {
-
                 if (thisNode.level === 0) {
+                    moves = [startVertex.coord];    
                     updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
-                    You were already here!`)
+                    You were already here!`);
                 }
-
                 if (thisNode.level === 1) {
+                    moves = [startVertex.coord, thisNode.coord];
                     updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} move!
 
-                    Move: ${startVertex.coord} -> ${endVertex.coord}`);
+                    Move: ${startVertex.coord} -> ${endVertex.coord}`);          
                 } else if (thisNode.level === 2) {
+                    moves = [startVertex.coord, thisNode.parent.coord, thisNode.coord];
                    updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                    You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 3) {
-    
+                    moves = [startVertex.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
                     updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 4) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
                     updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 5) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];                   
                     updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 6) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
                     updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
                 } else if (thisNode.level === 7) {
+                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    
                     updateComment(`Start: ${startVertex.coord} -> End: ${thisNode.coord}
                     
                     You made it in ${thisNode.level} moves!
                     
                     Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
-                } 
-                return;
-            } 
-        }
+                };
+            };
+        };
         // End traversal after going through all nodes
-        console.log('No possible moves found. Finished traversal!');
-}
+        return moves;
+    };
 
-    breadthFirstSearch() {
-        // perform breadth first search to find the shortest path using 
-        // Dijkstra's algorithm: 
-        // (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
-        // For a given source node in the graph, the algorithm finds the
-        // shortest path between that node and every other
+    getMoves() {
+        return moves;
     }
 };
 

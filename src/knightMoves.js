@@ -1,6 +1,4 @@
-
 import { adjacencyList, Graph, Vertex } from './graph'
-
 
 function makeVertices() {
     // Instantiate an empty array to hold the Vertices
@@ -21,8 +19,7 @@ function makeVertices() {
         }
     }
     return vertexList;
-}
-
+};
 
 function makeGraph() {
     // make list of vertices
@@ -31,14 +28,14 @@ function makeGraph() {
     const boardGraph = new Graph(64, vertexList);
     return boardGraph;
 
-}
-
+};
 
 function knightMoves(graph, start, end) {
     let traverseStart = parseInt(start.coord);
     let traverseEnd = parseInt(end.coord);
     // Call the traverse function
-    graph.breadthFirstTraverse(traverseStart, traverseEnd);
-}
+    let moves = graph.breadthFirstSearch(traverseStart, traverseEnd);
+    return moves;
+};
 
-export { knightMoves, makeGraph }
+export { knightMoves, makeGraph };
