@@ -1,3 +1,5 @@
+import { updateComment } from './displayControls';
+
 const adjacencyList = {
     '0': [10, 17],
     '1': [16, 18, 11],
@@ -78,6 +80,12 @@ class Vertex {
         this.coord = coord;
         // get this vertex's adjacency list
         this.neighbours = [];
+        // set visited to false
+        this.visited = false;
+        // set queued to false
+        this.queued = false;
+        // set level to null;
+        this.level = null;
     }
 };
 
@@ -87,6 +95,111 @@ class Graph {
         this.vertices = numVertices;
         this.list = list;
     }
+
+    breadthFirstTraverse(start, end) {
+        // DEBUG console logs
+        console.log('Traversing the graph from node ' + start + ' to node ' + end);
+
+        // set all vertices' 'visited' and 'queued' properties to false
+        for (let i = 0; i < this.list.length; i++) {
+            this.list[i].visited = false;
+            this.list[i].queued = false;
+        }
+
+
+        // Get the right start vertex
+        let startVertex = this.list[start];
+        let endVertex = this.list[end];
+
+
+        console.log('start vertex: ' + startVertex.coord);
+
+        console.log('end vertex: ' + endVertex.coord);
+
+        // Make a queue
+        let queue = [];
+
+      
+
+        // Add start node to queue and mark it as queued
+        startVertex.queued = true;
+        startVertex.level = 0;
+        queue.push(startVertex);
+        
+  
+        // While items are in the queue
+        while (queue.length > 0) {
+            
+            // Get the first item in the queue
+            let thisNode = queue[0];
+            
+            // Mark this item as visited
+            thisNode.visited = true;
+
+            // For each of this item's neighbours
+            for (let i = 0; i < thisNode.neighbours.length; i++) {
+                let thisNodeNeighbour = thisNode.neighbours[i];
+                
+                // If this neighbour has been visited or is already queued, skip it
+                if (thisNodeNeighbour.visited === false && 
+                    thisNodeNeighbour.queued === false &&
+                    thisNodeNeighbour.coord !== end) { 
+                    // Add this neighbour to the queue
+                    thisNodeNeighbour.parent = thisNode;
+                    thisNodeNeighbour.level = thisNode.level + 1;
+                    thisNodeNeighbour.queued = true;
+                    queue.push(thisNodeNeighbour);
+                } 
+            }
+            // Remove the first item from the queue
+            queue[0].queued = false;
+            queue.splice(0,1);
+            
+            // if the current node is our target, end traversal
+            if (thisNode === endVertex) {
+
+                if (thisNode.level === 1) {
+                    updateComment(`You made it in ${thisNode.level} move!
+
+                    Move: ${startVertex.coord} -> ${endVertex.coord}`);
+
+                } else if (thisNode.level === 2) {
+                   updateComment(`You made it in ${thisNode.level} moves!
+                    
+                    Moves: ${startVertex.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
+
+                } else if (thisNode.level === 3) {
+    
+                    updateComment(`You made it in ${thisNode.level} moves!
+                    
+                    Moves: ${startVertex.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
+
+                } else if (thisNode.level === 4) {
+                    updateComment(`You made it in ${thisNode.level} moves!
+                    
+                    Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
+
+                } else if (thisNode.level === 5) {
+                    updateComment(`You made it in ${thisNode.level} moves!
+                    
+                    Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
+                } else if (thisNode.level === 6) {
+                    updateComment(`You made it in ${thisNode.level} moves!
+                    
+                    Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
+                } else if (thisNode.level === 7) {
+                    updateComment(`You made it in ${thisNode.level} moves!
+                    
+                    Moves: ${startVertex.coord} -> ${thisNode.parent.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.parent.coord} -> ${thisNode.parent.parent.parent.coord} -> ${thisNode.parent.parent.coord} -> ${thisNode.parent.coord} -> ${thisNode.coord}`);
+                } 
+
+                return;
+            } 
+            
+        }
+        // End traversal after going through all nodes
+        console.log('No possible moves found. Finished traversal!');
+}
 
     breadthFirstSearch() {
         // perform breadth first search to find the shortest path using 

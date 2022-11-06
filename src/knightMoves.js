@@ -1,4 +1,4 @@
-import { updateComment } from './displayControls';
+
 import { adjacencyList, Graph, Vertex } from './graph'
 
 
@@ -29,24 +29,16 @@ function makeGraph() {
     let vertexList = makeVertices();
     // make a graph to represent the board
     const boardGraph = new Graph(64, vertexList);
-
     return boardGraph;
 
 }
 
 
-function knightMoves(start, end) {
-    // DEBUG: console logging
-    console.log('Starting vertex\'s neighbours are: ');
-    for (let i = 0; i < start.neighbours.length; i++) {
-        console.log(start.neighbours[i].coord)
-    }
-    console.log('Ending vertex\'s neighbours are: ');
-    for (let i = 0; i < end.neighbours.length; i++) {
-        console.log(end.neighbours[i].coord)
-    }
-
-    return
+function knightMoves(graph, start, end) {
+    let traverseStart = parseInt(start.coord);
+    let traverseEnd = parseInt(end.coord);
+    // Call the traverse function
+    graph.breadthFirstTraverse(traverseStart, traverseEnd);
 }
 
 export { knightMoves, makeGraph }

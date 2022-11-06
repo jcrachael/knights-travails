@@ -57,21 +57,11 @@ function beginGame() {
 
     // Iterate through each cell 
     cells.forEach(function(cell) {
-        cell.addEventListener('click', function() {
-            
+        cell.addEventListener('click', function() {   
             // Get the coord/index number
             let coord = cell.getAttribute('data-coord');
-
-            
-
             // get the vertex with this index number
-           let thisVertex = boardGraph.list[coord]
-
-            // DEBUG console logs
-           console.log('Your coord is: ' + coord);
-            console.log('Matching vertex is: ');
-            console.log(thisVertex);
-
+            let thisVertex = boardGraph.list[coord]
             // If start is not defined, set this coord to start
             if (start === null) {
                 cells.forEach(function(cell) {
@@ -95,18 +85,15 @@ function beginGame() {
                 ` + `Moving the Knight from [${start.coord}] to [${end.coord}]...`);
                 
                 // Call the function to move from start to end
-                knightMoves(start, end);
+                knightMoves(boardGraph, start, end);
 
                 // reset start to null for next click
                 start = null;
-
                 return;
             } 
-           
+          
         });
-    })
-
-    
+    });
     
 }
 
