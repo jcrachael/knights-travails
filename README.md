@@ -45,9 +45,7 @@ A path between two vertices is the `path` of known edges between vertex `u` and 
 
 We usually denote the vertex set by `V` and the edge set by `E`. We often want to use the sizes of the vertex and its edge sets when running an algorithm on a graph. We typically number the vertices in `V` from `0` to `(V.length - 1)`.
 
-We can represent our graph with an `adjacency list` where for each vertex `i`, store an array of the vertices adjacent to it. We typically have one adjacency list per vertex. For example, our vertex `[0,0]` would have an adjacency list of `[[1,2], [2,1]]`.
-
-The entire adjacency list would begin: `[ [ [[1,2], [2,1]] ], [ [vertices, adjacent, to (0,1)] ], ... ]`.
+We can represent our graph with an `adjacency list` where for each vertex `i`, store an array of the vertices adjacent to it. We typically have one adjacency list per vertex. For example, our vertex `[0,0]` would have an adjacency list of `[[1,2], [2,1]]`. Each vertex's adjacency list will be stored as a key:value pair in a dictionary-type object containg all of the vertices' adjacency lists.
 
 We can now get to each vertex's adjacency list by indexing into the adjacency list array. To find out whether an edge `(i, j)` is present in the graph, we go to `i`'s adjacency list and look for `j`. We can use a for loop to iterate through the vertices in the `adjacencyList` array, so that `adjacencyList[i]` is an array containing the neighbours of vertex `i`. Then, loop through `adjacencyList[i]` so that `adjacencyList[i][j]` returns each adjacent vertex.
 
@@ -59,28 +57,52 @@ Sample Graph class:
 
 ```javascript
 class Graph { 
-        constructor(array) {
+        constructor() {
             // build the root
-            this.root = this.buildGraph(array);
+            this.root = this.buildGraph();
 
-        buildGraph(array) {
-            // build this Graph from the given board array
+        buildGraph() {
+            // build this Graph from the given vertex's adjacencyList array
         }
 
-        breadthFirstSearch(this, s) {
-            // perform breadth first search
+        breadthFirstSearch() {
+            // perform breadth first search to find the shortest path using 
+            // Dijkstra's algorithm: 
+            // (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+            // For a given source node in the graph, the algorithm finds the
+            // shortest path between that node and every other
         }
     }
+}
 ```
+
+Sample vertex class:
+
+```javascript
+class Vertex {
+    constructor(coord, array) {
+        // set the coordinate of this vertex
+        this.coord = coord;
+        // get this vertex's adjacency list
+        this.neighbours = array;
+    }
+}
+
+const node = new Vertex(coord, adjacencyList);
+
+```
+
 
 Sample knightMoves function:
 
 ```javascript
 function knightMoves(start, end) {
     
-    // 1) make a Graph from start vertex where all the child Nodes are adjacent vertices of start, e.g. const newGraph = new Graph(array)
+    // 1) make a Graph from start vertex where all the child Nodes are adjacent 
+    // vertices of start, e.g. const newGraph = new Graph(array)
 
-    // 2) use a breadth-first search algorithm to find the shortest path between start vertex and end vertex, e.g. newGraph.breadthFirstSearch(this, s)
+    // 2) use a breadth-first search algorithm to find the shortest path between 
+    // start vertex and end vertex, e.g. newGraph.breadthFirstSearch(this, s)
         // 2.1) mark all vertices as not visited
         // 2.2) declare a queue
         // 2.3) enqueue the starting vertex

@@ -55,8 +55,10 @@ function beginGame() {
     // Iterate through each cell 
     cells.forEach(function(cell) {
         cell.addEventListener('click', function() {
+            
             // Get the coord
             let coord = cell.getAttribute('data-coord').split('-');
+
             // If start is not defined, set this coord to start
             if (start === null) {
                 cells.forEach(function(cell) {
@@ -69,6 +71,7 @@ function beginGame() {
 
                 ` + 'Please select an ending cell...');
                 return start
+
             // Otherwise, set this coord to end
             } else if (start !== null && end === null) {
                 let end = coord;
@@ -76,11 +79,15 @@ function beginGame() {
                 updateComment('Starting cell: ' + start + `
                 ` +'Ending cell: ' + end + `
                 
-                ` + knightMoves(start, end));
+                ` + `Moving the Knight from [${start}] to [${end}]...`);
+                
                 // Call the function to move from start to end
                 knightMoves(start, end);
+
+                // reset start to null for next click
                 start = null;
-                return knightMoves(start, end);
+
+                return;
             } 
            
         });
