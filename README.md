@@ -42,7 +42,9 @@ We access each vertex's adjacency list by indexing into the corresponding adjace
 We will use a Breadth-First Search (BFS) algorithm to search the graph. To avoid processing any vertex more than once, we divide the vertices into two categories, visited and not visited, using a boolean. It is assumed that all vertices are reachable from the starting vertex.
 
 ## To-dos
-1. Feature: make the squares display with their chessboard reference (i.e., A1, E5) rather than their index number (coord)
+1. Add SVG of Knight icon to follow user's travels around the board
+2. Add a legend to each axis of the board (A-H for x-axis, 1-8 for y-axis)
+3. Finesse CSS styling
 
 
 
