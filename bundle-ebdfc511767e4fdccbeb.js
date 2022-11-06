@@ -551,17 +551,14 @@ function printBoard(board) {
     main.appendChild(div);
     // for each row of the board
     for (let i = 0; i < board.length; i++) {
-
         // For each cell in each row
         for (let j = 0; j < board[i].length; j++) {
-
             const cell = document.createElement('div');
-            cell.setAttribute('id', `cell-${board[i][j][0]}-${board[i][j][1]}`);
+            cell.setAttribute('id', `cell-${board[i][j]}`);
             cell.classList.add('cell');
-            cell.setAttribute('data-coord', `${board[i][j][0]}-${board[i][j][1]}`);
-            cell.innerHTML = `<p class="cell-text">( ${board[i][j][0]}, ${board[i][j][1]} )</p>`;
+            cell.setAttribute('data-coord', `${board[i][j]}`);
+            cell.innerHTML = `<p class="cell-text">${board[i][j]}</p>`;
             div.appendChild(cell);
-
         }
     }
 }
@@ -573,21 +570,27 @@ function updateComment(message) {
 
 function beginGame() {
     // Declare variables
-    const board = [[[0,0], [0,1], [0,2], [0,3], [0,4], [0,5], [0,6], [0,7]],
-                    [[1,0], [1,1], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7]],
-                    [[2,0], [2,1], [2,2], [2,3], [2,4], [2,5], [2,6], [2,7]],
-                    [[3,0], [3,1], [3,2], [3,3], [3,4], [3,5], [3,6], [3,7]],
-                    [[4,0], [4,1], [4,2], [4,3], [4,4], [4,5], [4,6], [4,7]],
-                    [[5,0], [5,1], [5,2], [5,3], [5,4], [5,5], [5,6], [5,7]],
-                    [[6,0], [6,1], [6,2], [6,3], [6,4], [6,5], [6,6], [6,7]],
-                    [[7,0], [7,1], [7,2], [7,3], [7,4], [7,5], [7,6], [7,7]]]
+    // Instantiate the Graph to represent the board
+    const boardGraph = (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.makeGraph)();
+    // Board array for printing and making cells
+    const board = [
+        [0,1,2,3,4,5,6,7],
+        [8,9,10,11,12,13,14,15],
+        [16,17,18,19,20,21,22,23],
+        [24,25,26,27,28,29,30,31],
+        [32,33,34,35,36,37,38,39],
+        [40,41,42,43,44,45,46,47],
+        [48,49,50,51,52,53,54,55],
+        [56,57,58,59,60,61,62,63]
+    ]
     // Welcome message
     let welcomeMessage = `Welcome to Knights Travails!
 
     Please select a starting square...`;    
-
+    // Start and end vertices set to null
     let start = null;
     let end = null;
+
     // Print the board and comment
     updateComment(welcomeMessage);
     printBoard(board);
@@ -598,32 +601,49 @@ function beginGame() {
     // Iterate through each cell 
     cells.forEach(function(cell) {
         cell.addEventListener('click', function() {
-            // Get the coord
-            let coord = cell.getAttribute('data-coord').split('-');
+            
+            // Get the coord/index number
+            let coord = cell.getAttribute('data-coord');
+
+            
+
+            // get the vertex with this index number
+           let thisVertex = boardGraph.list[coord]
+
+            // DEBUG console logs
+           console.log('Your coord is: ' + coord);
+            console.log('Matching vertex is: ');
+            console.log(thisVertex);
+
             // If start is not defined, set this coord to start
             if (start === null) {
                 cells.forEach(function(cell) {
                     cell.style.backgroundColor = 'white';
                 });
-                start = coord;
+                start = thisVertex;
                 cell.style.backgroundColor = 'yellowgreen';
                 updateComment();
-                updateComment('Starting cell: ' + start + `
+                updateComment('Starting cell: ' + start.coord + `
 
                 ` + 'Please select an ending cell...');
                 return start
+
             // Otherwise, set this coord to end
             } else if (start !== null && end === null) {
-                let end = coord;
+                let end = thisVertex;
                 cell.style.backgroundColor = 'red';
-                updateComment('Starting cell: ' + start + `
-                ` +'Ending cell: ' + end + `
+                updateComment('Starting cell: ' + start.coord + `
+                ` +'Ending cell: ' + end.coord + `
                 
-                ` + (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.knightMoves)(start, end));
+                ` + `Moving the Knight from [${start.coord}] to [${end.coord}]...`);
+                
                 // Call the function to move from start to end
                 (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.knightMoves)(start, end);
+
+                // reset start to null for next click
                 start = null;
-                return (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.knightMoves)(start, end);
+
+                return;
             } 
            
         });
@@ -633,6 +653,121 @@ function beginGame() {
     
 }
 
+
+
+
+/***/ }),
+
+/***/ 304:
+/*!**********************!*\
+  !*** ./src/graph.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Graph": () => (/* binding */ Graph),
+/* harmony export */   "Vertex": () => (/* binding */ Vertex),
+/* harmony export */   "adjacencyList": () => (/* binding */ adjacencyList)
+/* harmony export */ });
+const adjacencyList = {
+    '0': [10, 17],
+    '1': [16, 18, 11],
+    '2': [8, 17, 12, 19],
+    '3': [9, 18, 20, 13],
+    '4': [10, 19, 21, 14],
+    '5': [11, 20, 22, 15],
+    '6': [12, 21, 23],
+    '7': [13, 22],
+
+    '8': [ 2, 18, 25 ],
+    '9': [ 3, 24, 19, 26 ],
+    '10': [ 0, 16, 4, 20, 25, 27 ],
+    '11': [ 1, 17, 21, 5, 26, 28 ],
+    '12': [ 2, 18, 22, 6, 27, 29 ],
+    '13': [ 3, 19, 7, 23, 28, 30 ],
+    '14': [ 4, 20, 31, 29 ],
+    '15': [ 5, 21, 30 ],
+
+    '16': [ 1, 10, 26, 33 ],
+    '17': [ 0, 2, 11, 32, 27, 34 ],
+    '18': [ 1, 3, 12, 28, 35, 33, 24, 8 ],
+    '19': [ 2, 4, 13, 29, 36, 34, 25, 9 ],
+    '20': [ 3, 5, 14, 30, 37, 35, 26, 10 ],
+    '21': [ 4, 6, 15, 31, 38, 36, 27, 11 ],
+    '22': [ 5, 7, 39, 37, 28, 12 ],
+    '23': [ 6, 13, 29, 38 ],
+    
+    '24': [ 9, 18, 34, 41 ],
+    '25': [ 8, 10, 19, 35, 42, 40 ],
+    '26': [ 9, 11, 20, 36, 43, 41, 32, 16 ],
+    '27': [ 10, 12, 21, 37, 44, 42, 33, 17 ],
+    '28': [ 11, 13, 22, 38, 45, 43, 34, 18 ],
+    '29': [ 12, 14, 23, 39, 46, 44, 35, 19 ],
+    '30': [ 13, 15, 47, 45, 36, 20 ],
+    '31': [ 14, 21, 37, 46 ],
+    
+    '32': [ 17, 26, 42, 49 ],
+    '33': [ 16, 18, 27, 43, 50, 48 ],
+    '34': [ 17, 19, 28, 44, 51, 49, 40, 24 ],
+    '35': [ 18, 20, 29, 45, 52, 50, 41, 25 ],
+    '36': [ 19, 21, 30, 46, 53, 51, 42, 26 ],
+    '37': [ 20, 22, 31, 47, 54, 52, 43, 27 ],
+    '38': [ 21, 23, 55, 53, 44, 28 ],
+    '39': [ 22, 29, 45, 54 ],
+    
+    '40': [ 25, 34, 50, 57 ],
+    '41': [ 24, 26, 35, 51, 58, 56 ],  
+    '42': [ 25, 27, 36, 52, 59, 57, 48, 32 ],
+    '43': [ 26, 28, 37, 53, 60, 58, 49, 33 ],
+    '44': [ 27, 29, 38, 54, 61, 59, 50, 34 ],
+    '45': [ 28, 30, 39, 55, 62, 60, 51, 35 ],
+    '46': [ 29, 31, 63, 61, 52, 36 ],
+    '47': [ 30, 37, 53, 62 ],
+    
+    '48': [ 33, 42, 58 ],
+    '49': [ 32, 34, 43, 59 ],   
+    '50': [ 33, 35, 44, 60, 56, 40 ],
+    '51': [ 34, 36, 45, 61, 57, 41 ],
+    '52': [ 35, 37, 46, 62, 58, 42 ],
+    '53': [ 36, 38, 47, 63, 59, 43 ],
+    '54': [ 37, 39, 60, 44 ],
+    '55': [ 38, 45, 61 ],
+    
+    '56': [ 41, 50 ],
+    '57': [ 40, 42, 51 ],
+    '58': [ 41, 43, 52, 48 ],
+    '59': [ 42, 44, 53, 49 ],
+    '60': [ 43, 45, 54, 50 ],
+    '61': [ 44, 46, 55, 51 ],
+    '62': [ 45, 47, 52 ],
+    '63': [ 46, 53,],
+};
+
+class Vertex {
+    constructor(coord) {
+        // set the coordinate of this vertex
+        this.coord = coord;
+        // get this vertex's adjacency list
+        this.neighbours = [];
+    }
+};
+
+
+class Graph { 
+    constructor(numVertices, list) {
+        this.vertices = numVertices;
+        this.list = list;
+    }
+
+    breadthFirstSearch() {
+        // perform breadth first search to find the shortest path using 
+        // Dijkstra's algorithm: 
+        // (https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
+        // For a given source node in the graph, the algorithm finds the
+        // shortest path between that node and every other
+    }
+};
 
 
 
@@ -662,13 +797,60 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "knightMoves": () => (/* binding */ knightMoves)
+/* harmony export */   "knightMoves": () => (/* binding */ knightMoves),
+/* harmony export */   "makeGraph": () => (/* binding */ makeGraph)
 /* harmony export */ });
 /* harmony import */ var _displayControls__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displayControls */ 972);
+/* harmony import */ var _graph__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graph */ 304);
+
+
+
+
+function makeVertices() {
+    // Instantiate an empty array to hold the Vertices
+    let vertexList = [];
+    // Make a Vertex for each key in adjacencyList, with neighbours set to the values for that key
+    for (const index in _graph__WEBPACK_IMPORTED_MODULE_1__.adjacencyList) {
+        const vertex = new _graph__WEBPACK_IMPORTED_MODULE_1__.Vertex(index);
+        vertexList.push(vertex);
+    }
+    // For each Vertex in vertexList, add its neighbours
+    for (const vertex in vertexList) {
+        const thisVertex = vertexList[vertex];
+        // For each index in this vertex's adjacency list
+        for (const index in _graph__WEBPACK_IMPORTED_MODULE_1__.adjacencyList[vertex]) {
+            // Add the vertex with this coord to thisVertex's neighbours list
+            const neighbourVertex = vertexList[_graph__WEBPACK_IMPORTED_MODULE_1__.adjacencyList[vertex][index]];
+            thisVertex.neighbours.push(neighbourVertex);
+        }
+    }
+    return vertexList;
+}
+
+
+function makeGraph() {
+    // make list of vertices
+    let vertexList = makeVertices();
+    // make a graph to represent the board
+    const boardGraph = new _graph__WEBPACK_IMPORTED_MODULE_1__.Graph(64, vertexList);
+
+    return boardGraph;
+
+}
 
 
 function knightMoves(start, end) {
-    return `Moving the Knight from [${start}] to [${end}]...`;
+    // DEBUG: console logging
+    console.log('Starting vertex\'s neighbours are: ');
+    for (let i = 0; i < start.neighbours.length; i++) {
+        console.log(start.neighbours[i].coord)
+    }
+    console.log('Ending vertex\'s neighbours are: ');
+    for (let i = 0; i < end.neighbours.length; i++) {
+        console.log(end.neighbours[i].coord)
+    }
+
+    return
 }
 
 
@@ -681,4 +863,4 @@ function knightMoves(start, end) {
 /******/ var __webpack_exports__ = (__webpack_exec__(138));
 /******/ }
 ]);
-//# sourceMappingURL=bundle-3f1532f8614f0aa80427.js.map
+//# sourceMappingURL=bundle-ebdfc511767e4fdccbeb.js.map
