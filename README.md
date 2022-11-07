@@ -42,12 +42,11 @@ We access each vertex's adjacency list by indexing into the corresponding adjace
 We will use a Breadth-First Search (BFS) algorithm to search the graph. To avoid processing any vertex more than once, we divide the vertices into two categories, visited and not visited, using a boolean. It is assumed that all vertices are reachable from the starting vertex.
 
 ## To-dos
-1. Add a legend to each axis of the board (A-H for x-axis, 1-8 for y-axis)
-2. Refactor CSS styles in .js files to style.css
-3. Refactor all UI comment updates in graph.js to displayControls.js
+1. Refactor CSS styles in .js files to style.css
+2. Refactor all UI comment updates in graph.js to displayControls.js
 
 
 
 ---
 
-Last modified: 5 November 2022
+Last modified: 7 November 2022

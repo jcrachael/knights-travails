@@ -10,11 +10,46 @@ body {
     text-align: center;
 }
 
+#x-axis {
+    width: 550px;
+    height: 38px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#y-axis {
+    width: 68.75px;
+    position: absolute;
+    margin-top: 7px;
+    left: calc(50% - 338px);
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.axis {
+    width: 68.75px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+#y-axis > .axis {
+    height: 68px;
+    padding-top: 22px;
+}
+
 #board-container {
     font-size: 10pt;
-    margin: 20px auto;
+    position: absolute;
+    top: 270px;
+    left: calc(50% - 275px);
     width: 550px;
     height: 550px;
+    border: 1px black solid;
     display: grid;
     grid-template-columns: repeat(8, auto);
     grid-template-rows: repeat(8, auto);
