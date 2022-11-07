@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAEA;IACI,SAAS,EAAE,UAAU;IACrB,wDAAwD;AAC5D;;AAEA;IACI,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sCAAsC;IACtC,mCAAmC;IACnC,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,sBAAsB;IACtB,eAAe;IACf,cAAc;IACd,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,uCAAuC;AAC3C;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,cAAc;IACd,WAAW;IACX,YAAY;AAChB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');\r\n\r\n* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n.knight {\r\n    width: 50px;\r\n}\r\n\r\n.cell-text {\r\n    font-weight: bold;\r\n}\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAEA;IACI,SAAS,EAAE,UAAU;IACrB,wDAAwD;AAC5D;;AAEA;IACI,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,aAAa;IACb,aAAa;IACb,sCAAsC;IACtC,mCAAmC;IACnC,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,sBAAsB;IACtB,eAAe;IACf,cAAc;IACd,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,cAAc;IACd,WAAW;IACX,YAAY;AAChB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');\r\n\r\n* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    margin: 20px auto;\r\n    width: 550px;\r\n    height: 550px;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n.knight {\r\n    width: 50px;\r\n}\r\n\r\n.cell-text {\r\n    font-weight: bold;\r\n}\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -543,7 +543,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "updateComment": () => (/* binding */ updateComment)
 /* harmony export */ });
 /* harmony import */ var _knightMoves__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./knightMoves */ 581);
+/* harmony import */ var _assets_business_strategy_chess_horse_knight_svgrepo_com_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/business-strategy-chess-horse-knight-svgrepo-com.svg */ 328);
 
+
+
+function makeKnight() {
+    const knight = document.createElement('img');
+    knight.src = _assets_business_strategy_chess_horse_knight_svgrepo_com_svg__WEBPACK_IMPORTED_MODULE_1__;
+    knight.classList.add('knight');
+    knight.alt = 'Neigh!';
+    return knight;
+}
 
 function printBoard(board) {
     // Grab main and build container
@@ -559,7 +569,6 @@ function printBoard(board) {
             cell.setAttribute('id', `cell-${board[i][j]}`);
             cell.classList.add('cell');
             cell.setAttribute('data-coord', `${board[i][j]}`);
-            cell.innerHTML = `<p class="cell-text">${board[i][j]}</p>`;
             div.appendChild(cell);
         };
     };
@@ -722,7 +731,7 @@ function resetCells() {
         cell.style.backgroundColor = 'white';
         chessColour(cell);
         let chesscoord = cell.getAttribute('data-chess');
-        cell.innerText = chesscoord;
+        cell.firstChild.innerText = chesscoord;
     });
 }
 
@@ -868,42 +877,60 @@ function chessify(moves) {
 
 function playTurn(graph, start, end) {
     // Call the function to move from start to end and get the moves required
+    const knight = document.querySelector('.knight');
     let moves = (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.knightMoves)(graph, start, end);
     // remove the first and last item from moves
     let firstMove = moves.shift();
     let lastMove = moves.pop();
     let firstMoveCell = document.querySelector(`[data-chess="${firstMove}"]`);
     let lastMoveCell = document.querySelector(`[data-chess="${lastMove}"]`);
-    // colour first move cell
-    firstMoveCell.style.backgroundColor = 'yellowgreen';
-    firstMoveCell.innerText = `Start (${firstMoveCell.getAttribute('data-chess')})`;
     let interval = 500;
     // if moves.length > 0, colour in all the squares
     if (moves.length > 0) {
+        // colour first move cell
+        firstMoveCell.style.backgroundColor = 'yellowgreen';
+        firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`;
+        firstMoveCell.removeChild(knight);
+        
         // iterate through moves
         moves.forEach( index => {
+            
             let thisIndex = moves.indexOf(index);
             setTimeout(() => {
                 let moveCell = document.querySelector(`[data-chess="${index}"]`);
                 moveCell.style.backgroundColor = 'cornflowerblue';
-                moveCell.innerText = `Move ${thisIndex + 1}
-                (${moveCell.getAttribute('data-chess')})`
-            }, interval * (thisIndex + 1))
+                moveCell.firstChild.innerText = '';
+                moveCell.appendChild(knight);
+
+                let prevCell = document.querySelector(`[data-chess="${moves[thisIndex-1]}"]`);
+                if (prevCell) {
+                    prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+                };
+            }, interval * (thisIndex));
+           
         });
         interval = interval * (moves.length + 1);
     };
     setTimeout(function() {
         lastMoveCell.style.backgroundColor = '#eb4934';
-        lastMoveCell.innerText = `End
-        (Move ${moves.length + 1})
-        (${lastMoveCell.getAttribute('data-chess')})`;
-    }, interval);
+        lastMoveCell.firstChild.innerText = '';
+        lastMoveCell.appendChild(knight);
+        let prevCell = document.querySelector(`[data-chess="${moves[moves.length - 1]}"]`);
+        if (prevCell !== null) {
+            prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+        }
+        if (moves.length === 0) {
+            firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`
+        };
+    }, interval - 500);
 };
 
 function beginGame() {
     // Declare variables
     // Instantiate the Graph to represent the board
     const boardGraph = (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.makeGraph)();
+    // make the knight icon
+    const knight = makeKnight();
     // Board array for printing and making cells
     const board = [
         [0,1,2,3,4,5,6,7],
@@ -935,7 +962,10 @@ function beginGame() {
         let coord = cell.getAttribute('data-coord');
         setChessCoord(cell, coord);
         let chesscoord = cell.getAttribute('data-chess');
-        cell.innerText = chesscoord;
+        let cellText = document.createElement('p');
+        cellText.classList.add('cell-text');
+        cell.appendChild(cellText);
+        cellText.innerText = chesscoord;
         chessColour(cell);
         cell.addEventListener('click', function() {   
             // get the vertex with this index number
@@ -949,6 +979,8 @@ function beginGame() {
                 start = thisVertex;
                 startCoord = chesscoord;
                 cell.style.backgroundColor = 'yellowgreen';
+                cell.firstChild.innerText = '';
+                cell.appendChild(knight);
                 updateComment();
                 updateComment('Start: ' + startCoord + `
 
@@ -958,9 +990,10 @@ function beginGame() {
             } else if (start !== null && end === null) {
                 let end = thisVertex;
                 endCoord = chesscoord;
+                cell.style.backgroundColor = '#eb4934';
                 updateComment(`Start: ${startCoord} -> End: ${endCoord}
                 
-                Moving the Knight from [${startCoord}] to [${endCoord}]...`); 
+                Moving the Knight from ${startCoord} to ${endCoord}...`); 
                 // Make the traversal
                 setTimeout(playTurn, 1000, boardGraph, start, end);
                 // reset start to null for next click
@@ -1279,6 +1312,16 @@ function knightMoves(graph, start, end) {
 
 
 
+/***/ }),
+
+/***/ 328:
+/*!*************************************************************************!*\
+  !*** ./src/assets/business-strategy-chess-horse-knight-svgrepo-com.svg ***!
+  \*************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "business-strategy-chess-horse-knight-svgrepo-com.svg";
+
 /***/ })
 
 },
@@ -1287,4 +1330,4 @@ function knightMoves(graph, start, end) {
 /******/ var __webpack_exports__ = (__webpack_exec__(138));
 /******/ }
 ]);
-//# sourceMappingURL=bundle-1746850589d4737e0b0b.js.map
+//# sourceMappingURL=bundle-51adbe916ebb095040b5.js.map

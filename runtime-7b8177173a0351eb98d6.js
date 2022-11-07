@@ -102,6 +102,11 @@
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/knights-travails/";
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -165,4 +170,4 @@
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=runtime-cf5fc571d9756a435124.js.map
+//# sourceMappingURL=runtime-7b8177173a0351eb98d6.js.map
