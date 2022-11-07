@@ -1,6 +1,6 @@
 # Knights Travails
 
-[Live demo](https://jcrachael.github.io/knights-travails/) (work in progress).
+[Live demo](https://jcrachael.github.io/knights-travails/).
 
 A search algorithm that shows the shortest possible route for a Knight on a standard 8x8 chessboard to move from one square to another.
 
@@ -42,9 +42,9 @@ We access each vertex's adjacency list by indexing into the corresponding adjace
 We will use a Breadth-First Search (BFS) algorithm to search the graph. To avoid processing any vertex more than once, we divide the vertices into two categories, visited and not visited, using a boolean. It is assumed that all vertices are reachable from the starting vertex.
 
 ## To-dos
-1. Add SVG of Knight icon to follow user's travels around the board
-2. Add a legend to each axis of the board (A-H for x-axis, 1-8 for y-axis)
-3. Finesse CSS styling
+1. Add a legend to each axis of the board (A-H for x-axis, 1-8 for y-axis)
+2. Refactor CSS styles in .js files to style.css
+3. Refactor all UI comment updates in graph.js to displayControls.js
 
 
 

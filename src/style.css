@@ -42,6 +42,13 @@ body {
     background-color: rgba(144,144,144,0.5);
 }
 
+.knight {
+    width: 50px;
+}
+
+.cell-text {
+    font-weight: bold;
+}
 
 #comment {
     height: 130px;

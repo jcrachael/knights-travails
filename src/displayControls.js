@@ -1,4 +1,13 @@
 import { knightMoves, makeGraph } from './knightMoves';
+import knightImg from './assets/business-strategy-chess-horse-knight-svgrepo-com.svg';
+
+function makeKnight() {
+    const knight = document.createElement('img');
+    knight.src = knightImg;
+    knight.classList.add('knight');
+    knight.alt = 'Neigh!';
+    return knight;
+}
 
 function printBoard(board) {
     // Grab main and build container
@@ -14,7 +23,6 @@ function printBoard(board) {
             cell.setAttribute('id', `cell-${board[i][j]}`);
             cell.classList.add('cell');
             cell.setAttribute('data-coord', `${board[i][j]}`);
-            cell.innerHTML = `<p class="cell-text">${board[i][j]}</p>`;
             div.appendChild(cell);
         };
     };
@@ -177,7 +185,7 @@ function resetCells() {
         cell.style.backgroundColor = 'white';
         chessColour(cell);
         let chesscoord = cell.getAttribute('data-chess');
-        cell.innerText = chesscoord;
+        cell.firstChild.innerText = chesscoord;
     });
 }
 
@@ -323,42 +331,60 @@ function chessify(moves) {
 
 function playTurn(graph, start, end) {
     // Call the function to move from start to end and get the moves required
+    const knight = document.querySelector('.knight');
     let moves = knightMoves(graph, start, end);
     // remove the first and last item from moves
     let firstMove = moves.shift();
     let lastMove = moves.pop();
     let firstMoveCell = document.querySelector(`[data-chess="${firstMove}"]`);
     let lastMoveCell = document.querySelector(`[data-chess="${lastMove}"]`);
-    // colour first move cell
-    firstMoveCell.style.backgroundColor = 'yellowgreen';
-    firstMoveCell.innerText = `Start (${firstMoveCell.getAttribute('data-chess')})`;
     let interval = 500;
     // if moves.length > 0, colour in all the squares
     if (moves.length > 0) {
+        // colour first move cell
+        firstMoveCell.style.backgroundColor = 'yellowgreen';
+        firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`;
+        firstMoveCell.removeChild(knight);
+        
         // iterate through moves
         moves.forEach( index => {
+            
             let thisIndex = moves.indexOf(index);
             setTimeout(() => {
                 let moveCell = document.querySelector(`[data-chess="${index}"]`);
                 moveCell.style.backgroundColor = 'cornflowerblue';
-                moveCell.innerText = `Move ${thisIndex + 1}
-                (${moveCell.getAttribute('data-chess')})`
-            }, interval * (thisIndex + 1))
+                moveCell.firstChild.innerText = '';
+                moveCell.appendChild(knight);
+
+                let prevCell = document.querySelector(`[data-chess="${moves[thisIndex-1]}"]`);
+                if (prevCell) {
+                    prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+                };
+            }, interval * (thisIndex));
+           
         });
         interval = interval * (moves.length + 1);
     };
     setTimeout(function() {
         lastMoveCell.style.backgroundColor = '#eb4934';
-        lastMoveCell.innerText = `End
-        (Move ${moves.length + 1})
-        (${lastMoveCell.getAttribute('data-chess')})`;
-    }, interval);
+        lastMoveCell.firstChild.innerText = '';
+        lastMoveCell.appendChild(knight);
+        let prevCell = document.querySelector(`[data-chess="${moves[moves.length - 1]}"]`);
+        if (prevCell !== null) {
+            prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+        }
+        if (moves.length === 0) {
+            firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`
+        };
+    }, interval - 500);
 };
 
 function beginGame() {
     // Declare variables
     // Instantiate the Graph to represent the board
     const boardGraph = makeGraph();
+    // make the knight icon
+    const knight = makeKnight();
     // Board array for printing and making cells
     const board = [
         [0,1,2,3,4,5,6,7],
@@ -390,7 +416,10 @@ function beginGame() {
         let coord = cell.getAttribute('data-coord');
         setChessCoord(cell, coord);
         let chesscoord = cell.getAttribute('data-chess');
-        cell.innerText = chesscoord;
+        let cellText = document.createElement('p');
+        cellText.classList.add('cell-text');
+        cell.appendChild(cellText);
+        cellText.innerText = chesscoord;
         chessColour(cell);
         cell.addEventListener('click', function() {   
             // get the vertex with this index number
@@ -404,6 +433,8 @@ function beginGame() {
                 start = thisVertex;
                 startCoord = chesscoord;
                 cell.style.backgroundColor = 'yellowgreen';
+                cell.firstChild.innerText = '';
+                cell.appendChild(knight);
                 updateComment();
                 updateComment('Start: ' + startCoord + `
 
@@ -413,9 +444,10 @@ function beginGame() {
             } else if (start !== null && end === null) {
                 let end = thisVertex;
                 endCoord = chesscoord;
+                cell.style.backgroundColor = '#eb4934';
                 updateComment(`Start: ${startCoord} -> End: ${endCoord}
                 
-                Moving the Knight from [${startCoord}] to [${endCoord}]...`); 
+                Moving the Knight from ${startCoord} to ${endCoord}...`); 
                 // Make the traversal
                 setTimeout(playTurn, 1000, boardGraph, start, end);
                 // reset start to null for next click
