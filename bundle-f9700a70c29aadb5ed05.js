@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#x-axis {\r\n    width: 550px;\r\n    height: 38px;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n#y-axis {\r\n    width: 68.75px;\r\n    position: absolute;\r\n    margin-top: 7px;\r\n    left: calc(50% - 338px);\r\n    height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.axis {\r\n    width: 68.75px;\r\n    font-size: 14pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#y-axis > .axis {\r\n    height: 68px;\r\n    padding-top: 22px;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    position: absolute;\r\n    top: 270px;\r\n    left: calc(50% - 275px);\r\n    width: 550px;\r\n    height: 550px;\r\n    border: 1px black solid;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n.knight {\r\n    width: 50px;\r\n}\r\n\r\n.cell-text {\r\n    font-weight: bold;\r\n}\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAEA;IACI,SAAS,EAAE,UAAU;IACrB,wDAAwD;AAC5D;;AAEA;IACI,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,cAAc;IACd,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,kBAAkB;IAClB,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,UAAU;IACV,uBAAuB;IACvB,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,aAAa;IACb,sCAAsC;IACtC,mCAAmC;IACnC,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,sBAAsB;IACtB,eAAe;IACf,cAAc;IACd,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,cAAc;IACd,WAAW;IACX,YAAY;AAChB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');\r\n\r\n* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#x-axis {\r\n    width: 550px;\r\n    height: 38px;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n#y-axis {\r\n    width: 68.75px;\r\n    position: absolute;\r\n    margin-top: 7px;\r\n    left: calc(50% - 338px);\r\n    height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.axis {\r\n    width: 68.75px;\r\n    font-size: 14pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#y-axis > .axis {\r\n    height: 68px;\r\n    padding-top: 22px;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    position: absolute;\r\n    top: 270px;\r\n    left: calc(50% - 275px);\r\n    width: 550px;\r\n    height: 550px;\r\n    border: 1px black solid;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    background-color: #fff;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n.cell:hover {\r\n    background-color: rgba(144,144,144,0.3);\r\n}\r\n\r\n.cell:active {\r\n    background-color: rgba(144,144,144,0.5);\r\n}\r\n\r\n.knight {\r\n    width: 50px;\r\n}\r\n\r\n.cell-text {\r\n    font-weight: bold;\r\n}\r\n\r\n#comment {\r\n    height: 130px;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#x-axis {\r\n    width: 550px;\r\n    height: 38px;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n#y-axis {\r\n    width: 68.75px;\r\n    position: absolute;\r\n    margin-top: 7px;\r\n    left: calc(50% - 338px);\r\n    height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.axis {\r\n    width: 68.75px;\r\n    font-size: 14pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#y-axis > .axis {\r\n    height: 68px;\r\n    padding-top: 22px;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    position: absolute;\r\n    top: 270px;\r\n    left: calc(50% - 275px);\r\n    width: 550px;\r\n    height: 550px;\r\n    border: 1px black solid;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.knight {\r\n    width: 50px;\r\n}\r\n\r\n.cell-text {\r\n    font-weight: bold;\r\n}\r\n\r\n#comment {\r\n\r\n    height: 130px;\r\n\r\n}\r\n\r\n.comment-text {\r\n    font-size: 12pt;\r\n    margin: 14pt auto;\r\n}\r\n\r\n.start-move {\r\n    font-size: 16pt;\r\n    color: yellowgreen;\r\n    font-weight: bold;\r\n}\r\n\r\n.gray {\r\n    background-color: gray;\r\n}\r\n\r\n.lightgray {\r\n    background-color: lightgray;\r\n}\r\n\r\n.start-cell {\r\n    background-color: yellowgreen;\r\n}\r\n\r\n.end-cell {\r\n    background-color: #eb4934;\r\n}\r\n\r\n.blue-cell {\r\n    background-color: cornflowerblue;\r\n}\r\n\r\n.end-move {\r\n    font-size: 16pt;\r\n    color: #eb4934;\r\n    font-weight: bold;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}", "",{"version":3,"sources":["webpack://./src/style.css"],"names":[],"mappings":"AAEA;IACI,SAAS,EAAE,UAAU;IACrB,wDAAwD;AAC5D;;AAEA;IACI,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,cAAc;IACd,aAAa;IACb,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,kBAAkB;IAClB,eAAe;IACf,uBAAuB;IACvB,aAAa;IACb,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,iBAAiB;AACrB;;AAEA;IACI,YAAY;IACZ,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,UAAU;IACV,uBAAuB;IACvB,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,aAAa;IACb,sCAAsC;IACtC,mCAAmC;IACnC,mBAAmB;IACnB,qBAAqB;AACzB;;AAEA;IACI,uBAAuB;IACvB,sBAAsB;IACtB,eAAe;IACf,cAAc;IACd,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;;AAGA;IACI,WAAW;AACf;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;IAEI,aAAa;;AAEjB;;AAEA;IACI,eAAe;IACf,iBAAiB;AACrB;;AAEA;IACI,eAAe;IACf,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,6BAA6B;AACjC;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,gCAAgC;AACpC;;AAEA;IACI,eAAe;IACf,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,cAAc;IACd,WAAW;IACX,YAAY;AAChB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');\r\n\r\n* {\r\n    margin: 0; padding: 0;\r\n    font-family: 'Roboto Mono', Arial, Helvetica, sans-serif;\r\n}\r\n\r\nbody {\r\n    width: 100vw;\r\n    text-align: center;\r\n}\r\n\r\n#x-axis {\r\n    width: 550px;\r\n    height: 38px;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n#y-axis {\r\n    width: 68.75px;\r\n    position: absolute;\r\n    margin-top: 7px;\r\n    left: calc(50% - 338px);\r\n    height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.axis {\r\n    width: 68.75px;\r\n    font-size: 14pt;\r\n    font-weight: bold;\r\n}\r\n\r\n#y-axis > .axis {\r\n    height: 68px;\r\n    padding-top: 22px;\r\n}\r\n\r\n#board-container {\r\n    font-size: 10pt;\r\n    position: absolute;\r\n    top: 270px;\r\n    left: calc(50% - 275px);\r\n    width: 550px;\r\n    height: 550px;\r\n    border: 1px black solid;\r\n    display: grid;\r\n    grid-template-columns: repeat(8, auto);\r\n    grid-template-rows: repeat(8, auto);\r\n    align-items: center;\r\n    justify-items: center;\r\n}\r\n\r\n.cell {\r\n    border: 1px black solid;\r\n    box-sizing: border-box;\r\n    height: 68.75px;\r\n    width: 68.75px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n.knight {\r\n    width: 50px;\r\n}\r\n\r\n.cell-text {\r\n    font-weight: bold;\r\n}\r\n\r\n#comment {\r\n\r\n    height: 130px;\r\n\r\n}\r\n\r\n.comment-text {\r\n    font-size: 12pt;\r\n    margin: 14pt auto;\r\n}\r\n\r\n.start-move {\r\n    font-size: 16pt;\r\n    color: yellowgreen;\r\n    font-weight: bold;\r\n}\r\n\r\n.gray {\r\n    background-color: gray;\r\n}\r\n\r\n.lightgray {\r\n    background-color: lightgray;\r\n}\r\n\r\n.start-cell {\r\n    background-color: yellowgreen;\r\n}\r\n\r\n.end-cell {\r\n    background-color: #eb4934;\r\n}\r\n\r\n.blue-cell {\r\n    background-color: cornflowerblue;\r\n}\r\n\r\n.end-move {\r\n    font-size: 16pt;\r\n    color: #eb4934;\r\n    font-weight: bold;\r\n}\r\n\r\nheader {\r\n    margin: 20pt;\r\n}\r\n\r\nfooter {\r\n    position: absolute;\r\n    bottom: 0;\r\n    font-size: 8pt;\r\n    width: 100%;\r\n    height: 19px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -538,6 +538,7 @@ module.exports = styleTagTransform;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "appendComment": () => (/* binding */ appendComment),
 /* harmony export */   "beginGame": () => (/* binding */ beginGame),
 /* harmony export */   "chessify": () => (/* binding */ chessify),
 /* harmony export */   "updateComment": () => (/* binding */ updateComment)
@@ -553,17 +554,14 @@ function makeKnight() {
     knight.classList.add('knight');
     knight.alt = 'Neigh!';
     return knight;
-}
+};
 
 function printBoard(board) {
-    // Grab main and build container
     const main = document.getElementById('main');
     const div = document.createElement('div');
     div.setAttribute('id', 'board-container');
     main.appendChild(div);
-    // for each row of the board
     for (let i = 0; i < board.length; i++) {
-        // For each cell in each row
         for (let j = 0; j < board[i].length; j++) {
             const cell = document.createElement('div');
             cell.setAttribute('id', `cell-${board[i][j]}`);
@@ -704,8 +702,7 @@ function setChessCoord(cell, coord) {
     } else if (coord == 63) {
         cell.setAttribute('data-chess', 'H1');
     }
-}
-
+};
 
 function chessColour(cell) {
     const attr = cell.getAttribute('data-chess');
@@ -716,161 +713,122 @@ function chessColour(cell) {
         attr == 'B4' || attr == 'D4' || attr == 'F4' || attr == 'H4' ||
         attr == 'A3' || attr == 'C3' || attr == 'E3' || attr == 'G3' ||
         attr == 'B2' || attr == 'D2' || attr == 'F2' || attr == 'H2' ||
-        attr == 'A1' || attr == 'C1' || attr == 'E1' || attr == 'G1'  
-    ) {
-        cell.style.backgroundColor = 'gray';
-    } else {
-        cell.style.backgroundColor = 'lightgray';
-    }
-}
+        attr == 'A1' || attr == 'C1' || attr == 'E1' || attr == 'G1') { 
+        if (!cell.classList.contains('gray')) { cell.classList.add('gray');}} 
+    else {if(!cell.classList.contains('lightgray')) { cell.classList.add('lightgray');}};
+};
 
 function resetCells() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(function(cell) {
-        // Get the coord/index number
-        cell.style.backgroundColor = 'white';
         chessColour(cell);
         let chesscoord = cell.getAttribute('data-chess');
         cell.firstChild.innerText = chesscoord;
+        if (cell.classList.contains('start-cell')) {cell.classList.remove('start-cell');} 
+        if (cell.classList.contains('end-cell')) {cell.classList.remove('end-cell');}
+        if (cell.classList.contains('blue-cell')) {cell.classList.remove('blue-cell');}
     });
-}
+    const comment = document.getElementById('comment');
+    comment.innerHTML = `<p id="comment-main" class="comment-text"></p>`;
+};
 
 function updateComment(message) {
-    const comment = document.getElementById('comment');
+    const comment = document.getElementById('comment-main');
     comment.innerText = message;
 };
 
+function appendComment(message) {
+    const comment = document.getElementById('comment');
+    const newText = document.createElement('p');
+    newText.classList.add('comment-text');
+    newText.innerText = message;
+    comment.appendChild(newText);
+};
+
+function appendCommentNoBreak(message) {
+    const comment = document.getElementById('comment');
+    const newText = document.createElement('span');
+    newText.classList.add('comment-text');
+    newText.innerText = message;
+    comment.appendChild(newText);
+    return newText;
+}
+
+function makeMovesComment(moves) {
+    let numMovesComment;
+    let numMoves = moves.length - 1;
+    if (numMoves === 0) { numMovesComment = 'You were already here!'} 
+    else if (numMoves === 1) { numMovesComment = 'You made it in 1 move!' } 
+    else { numMovesComment = `You made it in ${numMoves} moves!` }
+    appendComment(numMovesComment);
+}
+
 function chessify(moves) {
     for (let i = 0; i < moves.length; i++) {
-        if (moves[i] == 0) {
-            moves[i] = 'A8';
-        } else if (moves[i] == 1) {
-            moves[i] = 'B8';
-        } else if (moves[i] == 2) {
-            moves[i] = 'C8';
-        } else if (moves[i] == 3) {
-            moves[i] = 'D8';
-        } else if (moves[i] == 4) {
-            moves[i] = 'E8';
-        } else if (moves[i] == 5) {
-            moves[i] = 'F8';
-        } else if (moves[i] == 6) {
-            moves[i] = 'G8';
-        } else if (moves[i] == 7) {
-            moves[i] = 'H8';
-        } else if (moves[i] == 8) {
-            moves[i] = 'A7';
-        } else if (moves[i] == 9) {
-            moves[i] = 'B7';
-        } else if (moves[i] == 10) {
-            moves[i] = 'C7';
-        } else if (moves[i] == 11) {
-            moves[i] = 'D7';
-        } else if (moves[i] == 12) {
-            moves[i] = 'E7';
-        } else if (moves[i] == 13) {
-            moves[i] = 'F7';
-        } else if (moves[i] == 14) {
-            moves[i] = 'G7';
-        } else if (moves[i] == 15) {
-            moves[i] = 'H7';
-        } else if (moves[i] == 16) {
-            moves[i] = 'A6';
-        } else if (moves[i] == 17) {
-            moves[i] = 'B6';
-        } else if (moves[i] == 18) {
-            moves[i] = 'C6';
-        } else if (moves[i] == 19) {
-            moves[i] = 'D6';
-        } else if (moves[i] == 20) {
-            moves[i] = 'E6';
-        } else if (moves[i] == 21) {
-            moves[i] = 'F6';
-        } else if (moves[i] == 22) {
-            moves[i] = 'G6';
-        } else if (moves[i] == 23) {
-            moves[i] = 'H6';
-        } else if (moves[i] == 24) {
-            moves[i] = 'A5';
-        } else if (moves[i] == 25) {
-            moves[i] = 'B5';
-        } else if (moves[i] == 26) {
-            moves[i] = 'C5';
-        } else if (moves[i] == 27) {
-            moves[i] = 'D5';
-        } else if (moves[i] == 28) {
-            moves[i] = 'E5';
-        } else if (moves[i] == 29) {
-            moves[i] = 'F5';
-        } else if (moves[i] == 30) {
-            moves[i] = 'G5';
-        } else if (moves[i] == 31) {
-            moves[i] = 'H5';
-        }  else if (moves[i] == 32) {
-            moves[i] = 'A4';
-        } else if (moves[i] == 33) {
-            moves[i] = 'B4';
-        } else if (moves[i] == 34) {
-            moves[i] = 'C4';
-        } else if (moves[i] == 35) {
-            moves[i] = 'D4';
-        } else if (moves[i] == 36) {
-            moves[i] = 'E4';
-        } else if (moves[i] == 37) {
-            moves[i] = 'F4';
-        } else if (moves[i] == 38) {
-            moves[i] = 'G4';
-        } else if (moves[i] == 39) {
-            moves[i] = 'H4';
-        }  else if (moves[i] == 40) {
-            moves[i] = 'A3';
-        } else if (moves[i] == 41) {
-            moves[i] = 'B3';
-        } else if (moves[i] == 42) {
-            moves[i] = 'C3';
-        } else if (moves[i] == 43) {
-            moves[i] = 'D3';
-        } else if (moves[i] == 44) {
-            moves[i] = 'E3';
-        } else if (moves[i] == 45) {
-            moves[i] = 'F3';
-        } else if (moves[i] == 46) {
-            moves[i] = 'G3';
-        } else if (moves[i] == 47) {
-            moves[i] = 'H3';
-        }  else if (moves[i] == 48) {
-            moves[i] = 'A2';
-        } else if (moves[i] == 49) {
-            moves[i] = 'B2';
-        } else if (moves[i] == 50) {
-            moves[i] = 'C2';
-        } else if (moves[i] == 51) {
-            moves[i] = 'D2';
-        } else if (moves[i] == 52) {
-            moves[i] = 'E2';
-        } else if (moves[i] == 53) {
-            moves[i] = 'F2';
-        } else if (moves[i] == 54) {
-            moves[i] = 'G2';
-        } else if (moves[i] == 55) {
-            moves[i] = 'H2';
-        }  else if (moves[i] == 56) {
-            moves[i] = 'A1';
-        } else if (moves[i] == 57) {
-            moves[i] = 'B1';
-        } else if (moves[i] == 58) {
-            moves[i] = 'C1';
-        } else if (moves[i] == 59) {
-            moves[i] = 'D1';
-        } else if (moves[i] == 60) {
-            moves[i] = 'E1';
-        } else if (moves[i] == 61) {
-            moves[i] = 'F1';
-        } else if (moves[i] == 62) {
-            moves[i] = 'G1';
-        } else if (moves[i] == 63) {
-            moves[i] = 'H1';
-        }
+        if (moves[i] == 0) {moves[i] = 'A8';} 
+        else if (moves[i] == 1) {moves[i] = 'B8';} 
+        else if (moves[i] == 2) {moves[i] = 'C8';} 
+        else if (moves[i] == 3) {moves[i] = 'D8';} 
+        else if (moves[i] == 4) {moves[i] = 'E8';} 
+        else if (moves[i] == 5) {moves[i] = 'F8';} 
+        else if (moves[i] == 6) {moves[i] = 'G8';}
+        else if (moves[i] == 7) {moves[i] = 'H8';} 
+        else if (moves[i] == 8) {moves[i] = 'A7';} 
+        else if (moves[i] == 9) {moves[i] = 'B7';} 
+        else if (moves[i] == 10) {moves[i] = 'C7';} 
+        else if (moves[i] == 11) {moves[i] = 'D7';} 
+        else if (moves[i] == 12) {moves[i] = 'E7';} 
+        else if (moves[i] == 13) {moves[i] = 'F7';} 
+        else if (moves[i] == 14) {moves[i] = 'G7';} 
+        else if (moves[i] == 15) {moves[i] = 'H7';} 
+        else if (moves[i] == 16) {moves[i] = 'A6';} 
+        else if (moves[i] == 17) {moves[i] = 'B6';} 
+        else if (moves[i] == 18) {moves[i] = 'C6';} 
+        else if (moves[i] == 19) {moves[i] = 'D6';} 
+        else if (moves[i] == 20) {moves[i] = 'E6';} 
+        else if (moves[i] == 21) {moves[i] = 'F6';} 
+        else if (moves[i] == 22) {moves[i] = 'G6';} 
+        else if (moves[i] == 23) {moves[i] = 'H6';} 
+        else if (moves[i] == 24) {moves[i] = 'A5';} 
+        else if (moves[i] == 25) {moves[i] = 'B5';} 
+        else if (moves[i] == 26) {moves[i] = 'C5';} 
+        else if (moves[i] == 27) {moves[i] = 'D5';} 
+        else if (moves[i] == 28) {moves[i] = 'E5';} 
+        else if (moves[i] == 29) {moves[i] = 'F5';} 
+        else if (moves[i] == 30) {moves[i] = 'G5';} 
+        else if (moves[i] == 31) {moves[i] = 'H5';}  
+        else if (moves[i] == 32) {moves[i] = 'A4';} 
+        else if (moves[i] == 33) {moves[i] = 'B4';} 
+        else if (moves[i] == 34) {moves[i] = 'C4';} 
+        else if (moves[i] == 35) {moves[i] = 'D4';} 
+        else if (moves[i] == 36) {moves[i] = 'E4';} 
+        else if (moves[i] == 37) {moves[i] = 'F4';} 
+        else if (moves[i] == 38) {moves[i] = 'G4';} 
+        else if (moves[i] == 39) {moves[i] = 'H4';}  
+        else if (moves[i] == 40) {moves[i] = 'A3';} 
+        else if (moves[i] == 41) {moves[i] = 'B3';} 
+        else if (moves[i] == 42) {moves[i] = 'C3';} 
+        else if (moves[i] == 43) {moves[i] = 'D3';} 
+        else if (moves[i] == 44) {moves[i] = 'E3';} 
+        else if (moves[i] == 45) {moves[i] = 'F3';} 
+        else if (moves[i] == 46) {moves[i] = 'G3';} 
+        else if (moves[i] == 47) {moves[i] = 'H3';}  
+        else if (moves[i] == 48) {moves[i] = 'A2';} 
+        else if (moves[i] == 49) {moves[i] = 'B2';} 
+        else if (moves[i] == 50) {moves[i] = 'C2';} 
+        else if (moves[i] == 51) {moves[i] = 'D2';} 
+        else if (moves[i] == 52) {moves[i] = 'E2';} 
+        else if (moves[i] == 53) {moves[i] = 'F2';} 
+        else if (moves[i] == 54) {moves[i] = 'G2';} 
+        else if (moves[i] == 55) {moves[i] = 'H2';}  
+        else if (moves[i] == 56) {moves[i] = 'A1';} 
+        else if (moves[i] == 57) {moves[i] = 'B1';} 
+        else if (moves[i] == 58) {moves[i] = 'C1';} 
+        else if (moves[i] == 59) {moves[i] = 'D1';} 
+        else if (moves[i] == 60) {moves[i] = 'E1';} 
+        else if (moves[i] == 61) {moves[i] = 'F1';} 
+        else if (moves[i] == 62) {moves[i] = 'G1';} 
+        else if (moves[i] == 63) {moves[i] = 'H1';}
     }
     return moves
 };
@@ -879,69 +837,86 @@ function playTurn(graph, start, end) {
     // Call the function to move from start to end and get the moves required
     const knight = document.querySelector('.knight');
     let moves = (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.knightMoves)(graph, start, end);
-    // remove the first and last item from moves
-    let firstMove = moves.shift();
-    let lastMove = moves.pop();
-    let firstMoveCell = document.querySelector(`[data-chess="${firstMove}"]`);
-    let lastMoveCell = document.querySelector(`[data-chess="${lastMove}"]`);
-    let interval = 500;
-    // if moves.length > 0, colour in all the squares
-    if (moves.length > 0) {
-        // colour first move cell
-        firstMoveCell.style.backgroundColor = 'yellowgreen';
-        firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`;
-        firstMoveCell.removeChild(knight);
-        
-        // iterate through moves
-        moves.forEach( index => {
-            
-            let thisIndex = moves.indexOf(index);
-            setTimeout(() => {
-                let moveCell = document.querySelector(`[data-chess="${index}"]`);
-                moveCell.style.backgroundColor = 'cornflowerblue';
-                moveCell.firstChild.innerText = '';
-                moveCell.appendChild(knight);
-
-                let prevCell = document.querySelector(`[data-chess="${moves[thisIndex-1]}"]`);
-                if (prevCell) {
-                    prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
-                };
-            }, interval * (thisIndex));
-           
-        });
-        interval = interval * (moves.length + 1);
-    };
+    // Append the 'you made it in x moves' comment
+    makeMovesComment(moves);
+    // After 0.5s, print the first move
     setTimeout(function() {
-        lastMoveCell.style.backgroundColor = '#eb4934';
-        lastMoveCell.firstChild.innerText = '';
-        lastMoveCell.appendChild(knight);
-        let prevCell = document.querySelector(`[data-chess="${moves[moves.length - 1]}"]`);
-        if (prevCell !== null) {
-            prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
-        }
-        if (moves.length === 0) {
-            firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`
-        };
-    }, interval - 500);
+        // remove the first and last item from moves
+        let firstMove = moves.shift();
+        let lastMove = moves.pop();
+        let firstMoveCell = document.querySelector(`[data-chess="${firstMove}"]`);
+        let lastMoveCell = document.querySelector(`[data-chess="${lastMove}"]`);
+        let interval = 500;
+        // Append the 'first move ' comment
+        let movesComment = document.createElement('span');
+        movesComment.classList.add('comment-text');
+        movesComment.classList.add('start-move');
+        movesComment.innerText = firstMove + ' ';
+        document.getElementById('comment').appendChild(movesComment);
+        setTimeout(function() {
+            // if moves.length > 0, colour in all the squares
+            if (moves.length > 0) {
+                // colour first move cell
+                firstMoveCell.classList.add('start-cell');
+                firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`;
+                firstMoveCell.removeChild(knight);
+                // iterate through moves
+                moves.forEach( index => {
+                    let thisIndex = moves.indexOf(index);
+                    setTimeout(() => {
+                        let moveCell = document.querySelector(`[data-chess="${index}"]`);
+                        moveCell.classList.add('blue-cell');
+                        moveCell.firstChild.innerText = '';
+                        moveCell.appendChild(knight);
+                        appendCommentNoBreak(' -> ' + index);
+                        let prevCell = document.querySelector(`[data-chess="${moves[thisIndex-1]}"]`);
+                        if (prevCell) {
+                            prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+                        };
+                    }, interval * (thisIndex));
+                });
+                interval = interval * (moves.length + 1);
+            };
+            setTimeout(function() {
+                lastMoveCell.classList.add('end-cell');
+                lastMoveCell.firstChild.innerText = '';
+                lastMoveCell.appendChild(knight);
+                // Append the ending move comment
+                let endMovesComment = document.createElement('span');
+                let endMovesArrow = document.createElement('span');
+                endMovesArrow.classList.add('comment-text');
+                endMovesArrow.innerText = ' -> '
+                endMovesComment.classList.add('comment-text');
+                endMovesComment.classList.add('end-move');
+                endMovesComment.innerText = lastMove;
+                document.getElementById('comment').appendChild(endMovesArrow);
+                document.getElementById('comment').appendChild(endMovesComment);
+                
+                let prevCell = document.querySelector(`[data-chess="${moves[moves.length - 1]}"]`);
+                if (prevCell !== null) {
+                    prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+                }
+                if (moves.length === 0) {
+                    firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`
+                };
+            }, interval - 500);
+        }, interval);
+    }, 500);
 };
 
 function beginGame() {
-    // Declare variables
-    // Instantiate the Graph to represent the board
     const boardGraph = (0,_knightMoves__WEBPACK_IMPORTED_MODULE_0__.makeGraph)();
     // make the knight icon
     const knight = makeKnight();
     // Board array for printing and making cells
-    const board = [
-        [0,1,2,3,4,5,6,7],
-        [8,9,10,11,12,13,14,15],
-        [16,17,18,19,20,21,22,23],
-        [24,25,26,27,28,29,30,31],
-        [32,33,34,35,36,37,38,39],
-        [40,41,42,43,44,45,46,47],
-        [48,49,50,51,52,53,54,55],
-        [56,57,58,59,60,61,62,63]
-    ]
+    const board = [[0,1,2,3,4,5,6,7],
+                  [8,9,10,11,12,13,14,15],
+                  [16,17,18,19,20,21,22,23],
+                  [24,25,26,27,28,29,30,31],
+                  [32,33,34,35,36,37,38,39],
+                  [40,41,42,43,44,45,46,47],
+                  [48,49,50,51,52,53,54,55],
+                  [56,57,58,59,60,61,62,63]]
     // Welcome message
     let welcomeMessage = `Welcome to Knights Travails!
 
@@ -956,7 +931,6 @@ function beginGame() {
     printBoard(board);
     // Get all the cells
     const cells = document.querySelectorAll('.cell');
-    
     // Iterate through each cell 
     cells.forEach(function(cell) {
         let coord = cell.getAttribute('data-coord');
@@ -972,16 +946,12 @@ function beginGame() {
             let thisVertex = boardGraph.list[coord]
             // If start is not defined, set this coord to start
             if (start === null) {
-                cells.forEach(function(cell) {
-                    cell.style.backgroundColor = 'white';
-                });
                 resetCells();
                 start = thisVertex;
                 startCoord = chesscoord;
-                cell.style.backgroundColor = 'yellowgreen';
+                cell.classList.toggle('start-cell');
                 cell.firstChild.innerText = '';
                 cell.appendChild(knight);
-                updateComment();
                 updateComment('Start: ' + startCoord + `
 
                 ` + 'Please select an ending square...');
@@ -990,12 +960,10 @@ function beginGame() {
             } else if (start !== null && end === null) {
                 let end = thisVertex;
                 endCoord = chesscoord;
-                cell.style.backgroundColor = '#eb4934';
-                updateComment(`Start: ${startCoord} -> End: ${endCoord}
-                
-                Moving the Knight from ${startCoord} to ${endCoord}...`); 
+                cell.classList.toggle('end-cell');
+                updateComment(`Moving the Knight from ${startCoord} to ${endCoord}...`); 
                 // Make the traversal
-                setTimeout(playTurn, 1000, boardGraph, start, end);
+                setTimeout(playTurn, 500, boardGraph, start, end);
                 // reset start to null for next click
                 start = null;
                 return;
@@ -1003,7 +971,6 @@ function beginGame() {
         });
     });
 };
-
 
 
 
@@ -1113,7 +1080,6 @@ class Vertex {
     }
 };
 
-
 class Graph { 
     constructor(numVertices, list) {
         this.vertices = numVertices;
@@ -1164,78 +1130,61 @@ class Graph {
                 if (thisNode.level === 0) {
                     moves = [startVertex.coord]; 
                     (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[0]}
-                    
-                    You were already here!`);
                 }
                 if (thisNode.level === 1) {
-                    moves = [startVertex.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.coord];
                     moves = (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[1]}
-                    
-                    You made it in ${thisNode.level} move!
-
-                    Move: ${moves[0]} -> ${moves[1]}`);          
                 } else if (thisNode.level === 2) {
-                    moves = [startVertex.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                   (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[2]}
-                    
-                   You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]}`);
                 } else if (thisNode.level === 3) {
-                    moves = [startVertex.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[3]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]}`);
                 } else if (thisNode.level === 4) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[4]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]}`);
                 } else if (thisNode.level === 5) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];                   
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, thisNode.coord];                   
                     moves = (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[5]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]} -> ${moves[5]}`);
                 } else if (thisNode.level === 6) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[6]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]} -> ${moves[5]} -> ${moves[6]}`);
                 } else if (thisNode.level === 7) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.chessify)(moves);
-                    (0,_displayControls__WEBPACK_IMPORTED_MODULE_0__.updateComment)(`Start: ${moves[0]} -> End: ${moves[7]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]} -> ${moves[5]} -> ${moves[6]} -> ${moves[7]}`);
                 };
             };
         };
-        // End traversal after going through all nodes
         return moves;
     };
 
-    getMoves() {
-        return moves;
-    };
-
-    
 };
 
 
@@ -1273,13 +1222,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function makeVertices() {
-    // Instantiate an empty array to hold the Vertices
     let vertexList = [];
     // Make a Vertex for each key in adjacencyList, with neighbours set to the values for that key
     for (const index in _graph__WEBPACK_IMPORTED_MODULE_0__.adjacencyList) {
         const vertex = new _graph__WEBPACK_IMPORTED_MODULE_0__.Vertex(index);
         vertexList.push(vertex);
-    }
+    };
     // For each Vertex in vertexList, add its neighbours
     for (const vertex in vertexList) {
         const thisVertex = vertexList[vertex];
@@ -1288,15 +1236,13 @@ function makeVertices() {
             // Add the vertex with this coord to thisVertex's neighbours list
             const neighbourVertex = vertexList[_graph__WEBPACK_IMPORTED_MODULE_0__.adjacencyList[vertex][index]];
             thisVertex.neighbours.push(neighbourVertex);
-        }
-    }
+        };
+    };
     return vertexList;
 };
 
 function makeGraph() {
-    // make list of vertices
     let vertexList = makeVertices();
-    // make a graph to represent the board
     const boardGraph = new _graph__WEBPACK_IMPORTED_MODULE_0__.Graph(64, vertexList);
     return boardGraph;
 
@@ -1305,7 +1251,6 @@ function makeGraph() {
 function knightMoves(graph, start, end) {
     let traverseStart = parseInt(start.coord);
     let traverseEnd = parseInt(end.coord);
-    // Call the traverse function
     let moves = graph.breadthFirstSearch(traverseStart, traverseEnd);
     return moves;
 };
@@ -1330,4 +1275,4 @@ module.exports = __webpack_require__.p + "business-strategy-chess-horse-knight-s
 /******/ var __webpack_exports__ = (__webpack_exec__(138));
 /******/ }
 ]);
-//# sourceMappingURL=bundle-600e5e48cd8ee5f89a97.js.map
+//# sourceMappingURL=bundle-f9700a70c29aadb5ed05.js.map
