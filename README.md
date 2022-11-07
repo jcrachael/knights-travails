@@ -8,9 +8,9 @@ Projcet sourced from [The Odin Project JavaScript course](https://www.theodinpro
 
 
 ## About
-On any given move, a Knight can move 2 spaces in one direction and 1 space in the perpendicular direction. For example, if a Knight is on square `36`, its possible moves are `19`, `21`, `26`, `30`, `42`, `46`, `51` and `53`.
+On any given move, a Knight can move 2 spaces in one direction and 1 space in the perpendicular direction. For example, if a Knight is on square `C6`, its possible moves are `A5`, `A7`, `B4`, `B8`, `D4`, `D8`, `E7` and `E5`, i.e., for any given square `X`/`Y`, its neighbouring squares are those at `X-2`/`Y-1`, `X-2`/`Y+1`, `X-1`/`Y-2`, `X-1`/`Y+2`, `X+1`/`Y-2`, `X+1`/`Y+2`, `X+2`/`Y+1`, and `X+2`/`Y-1` (while X and Y remain in the bounds of 1 to 8 inclusive).
 
-The `board` will be a 2-dimensional array:
+The `board` will be a 2-dimensional array where each index represents a square on the chessboard:
 
 ```javascript
 board = [
@@ -42,8 +42,8 @@ We access each vertex's adjacency list by indexing into the corresponding adjace
 We will use a Breadth-First Search (BFS) algorithm to search the graph. To avoid processing any vertex more than once, we divide the vertices into two categories, visited and not visited, using a boolean. It is assumed that all vertices are reachable from the starting vertex.
 
 ## To-dos
-1. Refactor CSS styles in .js files to style.css
-2. Refactor all UI comment updates in graph.js to displayControls.js
+1. Improve UI and transitions
+2. Write an algorithm to determine a Vertex's moves from its starting position
 
 
 

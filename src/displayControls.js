@@ -7,17 +7,14 @@ function makeKnight() {
     knight.classList.add('knight');
     knight.alt = 'Neigh!';
     return knight;
-}
+};
 
 function printBoard(board) {
-    // Grab main and build container
     const main = document.getElementById('main');
     const div = document.createElement('div');
     div.setAttribute('id', 'board-container');
     main.appendChild(div);
-    // for each row of the board
     for (let i = 0; i < board.length; i++) {
-        // For each cell in each row
         for (let j = 0; j < board[i].length; j++) {
             const cell = document.createElement('div');
             cell.setAttribute('id', `cell-${board[i][j]}`);
@@ -158,8 +155,7 @@ function setChessCoord(cell, coord) {
     } else if (coord == 63) {
         cell.setAttribute('data-chess', 'H1');
     }
-}
-
+};
 
 function chessColour(cell) {
     const attr = cell.getAttribute('data-chess');
@@ -170,161 +166,122 @@ function chessColour(cell) {
         attr == 'B4' || attr == 'D4' || attr == 'F4' || attr == 'H4' ||
         attr == 'A3' || attr == 'C3' || attr == 'E3' || attr == 'G3' ||
         attr == 'B2' || attr == 'D2' || attr == 'F2' || attr == 'H2' ||
-        attr == 'A1' || attr == 'C1' || attr == 'E1' || attr == 'G1'  
-    ) {
-        cell.style.backgroundColor = 'gray';
-    } else {
-        cell.style.backgroundColor = 'lightgray';
-    }
-}
+        attr == 'A1' || attr == 'C1' || attr == 'E1' || attr == 'G1') { 
+        if (!cell.classList.contains('gray')) { cell.classList.add('gray');}} 
+    else {if(!cell.classList.contains('lightgray')) { cell.classList.add('lightgray');}};
+};
 
 function resetCells() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(function(cell) {
-        // Get the coord/index number
-        cell.style.backgroundColor = 'white';
         chessColour(cell);
         let chesscoord = cell.getAttribute('data-chess');
         cell.firstChild.innerText = chesscoord;
+        if (cell.classList.contains('start-cell')) {cell.classList.remove('start-cell');} 
+        if (cell.classList.contains('end-cell')) {cell.classList.remove('end-cell');}
+        if (cell.classList.contains('blue-cell')) {cell.classList.remove('blue-cell');}
     });
-}
+    const comment = document.getElementById('comment');
+    comment.innerHTML = `<p id="comment-main" class="comment-text"></p>`;
+};
 
 function updateComment(message) {
-    const comment = document.getElementById('comment');
+    const comment = document.getElementById('comment-main');
     comment.innerText = message;
 };
 
+function appendComment(message) {
+    const comment = document.getElementById('comment');
+    const newText = document.createElement('p');
+    newText.classList.add('comment-text');
+    newText.innerText = message;
+    comment.appendChild(newText);
+};
+
+function appendCommentNoBreak(message) {
+    const comment = document.getElementById('comment');
+    const newText = document.createElement('span');
+    newText.classList.add('comment-text');
+    newText.innerText = message;
+    comment.appendChild(newText);
+    return newText;
+}
+
+function makeMovesComment(moves) {
+    let numMovesComment;
+    let numMoves = moves.length - 1;
+    if (numMoves === 0) { numMovesComment = 'You were already here!'} 
+    else if (numMoves === 1) { numMovesComment = 'You made it in 1 move!' } 
+    else { numMovesComment = `You made it in ${numMoves} moves!` }
+    appendComment(numMovesComment);
+}
+
 function chessify(moves) {
     for (let i = 0; i < moves.length; i++) {
-        if (moves[i] == 0) {
-            moves[i] = 'A8';
-        } else if (moves[i] == 1) {
-            moves[i] = 'B8';
-        } else if (moves[i] == 2) {
-            moves[i] = 'C8';
-        } else if (moves[i] == 3) {
-            moves[i] = 'D8';
-        } else if (moves[i] == 4) {
-            moves[i] = 'E8';
-        } else if (moves[i] == 5) {
-            moves[i] = 'F8';
-        } else if (moves[i] == 6) {
-            moves[i] = 'G8';
-        } else if (moves[i] == 7) {
-            moves[i] = 'H8';
-        } else if (moves[i] == 8) {
-            moves[i] = 'A7';
-        } else if (moves[i] == 9) {
-            moves[i] = 'B7';
-        } else if (moves[i] == 10) {
-            moves[i] = 'C7';
-        } else if (moves[i] == 11) {
-            moves[i] = 'D7';
-        } else if (moves[i] == 12) {
-            moves[i] = 'E7';
-        } else if (moves[i] == 13) {
-            moves[i] = 'F7';
-        } else if (moves[i] == 14) {
-            moves[i] = 'G7';
-        } else if (moves[i] == 15) {
-            moves[i] = 'H7';
-        } else if (moves[i] == 16) {
-            moves[i] = 'A6';
-        } else if (moves[i] == 17) {
-            moves[i] = 'B6';
-        } else if (moves[i] == 18) {
-            moves[i] = 'C6';
-        } else if (moves[i] == 19) {
-            moves[i] = 'D6';
-        } else if (moves[i] == 20) {
-            moves[i] = 'E6';
-        } else if (moves[i] == 21) {
-            moves[i] = 'F6';
-        } else if (moves[i] == 22) {
-            moves[i] = 'G6';
-        } else if (moves[i] == 23) {
-            moves[i] = 'H6';
-        } else if (moves[i] == 24) {
-            moves[i] = 'A5';
-        } else if (moves[i] == 25) {
-            moves[i] = 'B5';
-        } else if (moves[i] == 26) {
-            moves[i] = 'C5';
-        } else if (moves[i] == 27) {
-            moves[i] = 'D5';
-        } else if (moves[i] == 28) {
-            moves[i] = 'E5';
-        } else if (moves[i] == 29) {
-            moves[i] = 'F5';
-        } else if (moves[i] == 30) {
-            moves[i] = 'G5';
-        } else if (moves[i] == 31) {
-            moves[i] = 'H5';
-        }  else if (moves[i] == 32) {
-            moves[i] = 'A4';
-        } else if (moves[i] == 33) {
-            moves[i] = 'B4';
-        } else if (moves[i] == 34) {
-            moves[i] = 'C4';
-        } else if (moves[i] == 35) {
-            moves[i] = 'D4';
-        } else if (moves[i] == 36) {
-            moves[i] = 'E4';
-        } else if (moves[i] == 37) {
-            moves[i] = 'F4';
-        } else if (moves[i] == 38) {
-            moves[i] = 'G4';
-        } else if (moves[i] == 39) {
-            moves[i] = 'H4';
-        }  else if (moves[i] == 40) {
-            moves[i] = 'A3';
-        } else if (moves[i] == 41) {
-            moves[i] = 'B3';
-        } else if (moves[i] == 42) {
-            moves[i] = 'C3';
-        } else if (moves[i] == 43) {
-            moves[i] = 'D3';
-        } else if (moves[i] == 44) {
-            moves[i] = 'E3';
-        } else if (moves[i] == 45) {
-            moves[i] = 'F3';
-        } else if (moves[i] == 46) {
-            moves[i] = 'G3';
-        } else if (moves[i] == 47) {
-            moves[i] = 'H3';
-        }  else if (moves[i] == 48) {
-            moves[i] = 'A2';
-        } else if (moves[i] == 49) {
-            moves[i] = 'B2';
-        } else if (moves[i] == 50) {
-            moves[i] = 'C2';
-        } else if (moves[i] == 51) {
-            moves[i] = 'D2';
-        } else if (moves[i] == 52) {
-            moves[i] = 'E2';
-        } else if (moves[i] == 53) {
-            moves[i] = 'F2';
-        } else if (moves[i] == 54) {
-            moves[i] = 'G2';
-        } else if (moves[i] == 55) {
-            moves[i] = 'H2';
-        }  else if (moves[i] == 56) {
-            moves[i] = 'A1';
-        } else if (moves[i] == 57) {
-            moves[i] = 'B1';
-        } else if (moves[i] == 58) {
-            moves[i] = 'C1';
-        } else if (moves[i] == 59) {
-            moves[i] = 'D1';
-        } else if (moves[i] == 60) {
-            moves[i] = 'E1';
-        } else if (moves[i] == 61) {
-            moves[i] = 'F1';
-        } else if (moves[i] == 62) {
-            moves[i] = 'G1';
-        } else if (moves[i] == 63) {
-            moves[i] = 'H1';
-        }
+        if (moves[i] == 0) {moves[i] = 'A8';} 
+        else if (moves[i] == 1) {moves[i] = 'B8';} 
+        else if (moves[i] == 2) {moves[i] = 'C8';} 
+        else if (moves[i] == 3) {moves[i] = 'D8';} 
+        else if (moves[i] == 4) {moves[i] = 'E8';} 
+        else if (moves[i] == 5) {moves[i] = 'F8';} 
+        else if (moves[i] == 6) {moves[i] = 'G8';}
+        else if (moves[i] == 7) {moves[i] = 'H8';} 
+        else if (moves[i] == 8) {moves[i] = 'A7';} 
+        else if (moves[i] == 9) {moves[i] = 'B7';} 
+        else if (moves[i] == 10) {moves[i] = 'C7';} 
+        else if (moves[i] == 11) {moves[i] = 'D7';} 
+        else if (moves[i] == 12) {moves[i] = 'E7';} 
+        else if (moves[i] == 13) {moves[i] = 'F7';} 
+        else if (moves[i] == 14) {moves[i] = 'G7';} 
+        else if (moves[i] == 15) {moves[i] = 'H7';} 
+        else if (moves[i] == 16) {moves[i] = 'A6';} 
+        else if (moves[i] == 17) {moves[i] = 'B6';} 
+        else if (moves[i] == 18) {moves[i] = 'C6';} 
+        else if (moves[i] == 19) {moves[i] = 'D6';} 
+        else if (moves[i] == 20) {moves[i] = 'E6';} 
+        else if (moves[i] == 21) {moves[i] = 'F6';} 
+        else if (moves[i] == 22) {moves[i] = 'G6';} 
+        else if (moves[i] == 23) {moves[i] = 'H6';} 
+        else if (moves[i] == 24) {moves[i] = 'A5';} 
+        else if (moves[i] == 25) {moves[i] = 'B5';} 
+        else if (moves[i] == 26) {moves[i] = 'C5';} 
+        else if (moves[i] == 27) {moves[i] = 'D5';} 
+        else if (moves[i] == 28) {moves[i] = 'E5';} 
+        else if (moves[i] == 29) {moves[i] = 'F5';} 
+        else if (moves[i] == 30) {moves[i] = 'G5';} 
+        else if (moves[i] == 31) {moves[i] = 'H5';}  
+        else if (moves[i] == 32) {moves[i] = 'A4';} 
+        else if (moves[i] == 33) {moves[i] = 'B4';} 
+        else if (moves[i] == 34) {moves[i] = 'C4';} 
+        else if (moves[i] == 35) {moves[i] = 'D4';} 
+        else if (moves[i] == 36) {moves[i] = 'E4';} 
+        else if (moves[i] == 37) {moves[i] = 'F4';} 
+        else if (moves[i] == 38) {moves[i] = 'G4';} 
+        else if (moves[i] == 39) {moves[i] = 'H4';}  
+        else if (moves[i] == 40) {moves[i] = 'A3';} 
+        else if (moves[i] == 41) {moves[i] = 'B3';} 
+        else if (moves[i] == 42) {moves[i] = 'C3';} 
+        else if (moves[i] == 43) {moves[i] = 'D3';} 
+        else if (moves[i] == 44) {moves[i] = 'E3';} 
+        else if (moves[i] == 45) {moves[i] = 'F3';} 
+        else if (moves[i] == 46) {moves[i] = 'G3';} 
+        else if (moves[i] == 47) {moves[i] = 'H3';}  
+        else if (moves[i] == 48) {moves[i] = 'A2';} 
+        else if (moves[i] == 49) {moves[i] = 'B2';} 
+        else if (moves[i] == 50) {moves[i] = 'C2';} 
+        else if (moves[i] == 51) {moves[i] = 'D2';} 
+        else if (moves[i] == 52) {moves[i] = 'E2';} 
+        else if (moves[i] == 53) {moves[i] = 'F2';} 
+        else if (moves[i] == 54) {moves[i] = 'G2';} 
+        else if (moves[i] == 55) {moves[i] = 'H2';}  
+        else if (moves[i] == 56) {moves[i] = 'A1';} 
+        else if (moves[i] == 57) {moves[i] = 'B1';} 
+        else if (moves[i] == 58) {moves[i] = 'C1';} 
+        else if (moves[i] == 59) {moves[i] = 'D1';} 
+        else if (moves[i] == 60) {moves[i] = 'E1';} 
+        else if (moves[i] == 61) {moves[i] = 'F1';} 
+        else if (moves[i] == 62) {moves[i] = 'G1';} 
+        else if (moves[i] == 63) {moves[i] = 'H1';}
     }
     return moves
 };
@@ -333,69 +290,86 @@ function playTurn(graph, start, end) {
     // Call the function to move from start to end and get the moves required
     const knight = document.querySelector('.knight');
     let moves = knightMoves(graph, start, end);
-    // remove the first and last item from moves
-    let firstMove = moves.shift();
-    let lastMove = moves.pop();
-    let firstMoveCell = document.querySelector(`[data-chess="${firstMove}"]`);
-    let lastMoveCell = document.querySelector(`[data-chess="${lastMove}"]`);
-    let interval = 500;
-    // if moves.length > 0, colour in all the squares
-    if (moves.length > 0) {
-        // colour first move cell
-        firstMoveCell.style.backgroundColor = 'yellowgreen';
-        firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`;
-        firstMoveCell.removeChild(knight);
-        
-        // iterate through moves
-        moves.forEach( index => {
-            
-            let thisIndex = moves.indexOf(index);
-            setTimeout(() => {
-                let moveCell = document.querySelector(`[data-chess="${index}"]`);
-                moveCell.style.backgroundColor = 'cornflowerblue';
-                moveCell.firstChild.innerText = '';
-                moveCell.appendChild(knight);
-
-                let prevCell = document.querySelector(`[data-chess="${moves[thisIndex-1]}"]`);
-                if (prevCell) {
-                    prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
-                };
-            }, interval * (thisIndex));
-           
-        });
-        interval = interval * (moves.length + 1);
-    };
+    // Append the 'you made it in x moves' comment
+    makeMovesComment(moves);
+    // After 0.5s, print the first move
     setTimeout(function() {
-        lastMoveCell.style.backgroundColor = '#eb4934';
-        lastMoveCell.firstChild.innerText = '';
-        lastMoveCell.appendChild(knight);
-        let prevCell = document.querySelector(`[data-chess="${moves[moves.length - 1]}"]`);
-        if (prevCell !== null) {
-            prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
-        }
-        if (moves.length === 0) {
-            firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`
-        };
-    }, interval - 500);
+        // remove the first and last item from moves
+        let firstMove = moves.shift();
+        let lastMove = moves.pop();
+        let firstMoveCell = document.querySelector(`[data-chess="${firstMove}"]`);
+        let lastMoveCell = document.querySelector(`[data-chess="${lastMove}"]`);
+        let interval = 500;
+        // Append the 'first move ' comment
+        let movesComment = document.createElement('span');
+        movesComment.classList.add('comment-text');
+        movesComment.classList.add('start-move');
+        movesComment.innerText = firstMove + ' ';
+        document.getElementById('comment').appendChild(movesComment);
+        setTimeout(function() {
+            // if moves.length > 0, colour in all the squares
+            if (moves.length > 0) {
+                // colour first move cell
+                firstMoveCell.classList.add('start-cell');
+                firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`;
+                firstMoveCell.removeChild(knight);
+                // iterate through moves
+                moves.forEach( index => {
+                    let thisIndex = moves.indexOf(index);
+                    setTimeout(() => {
+                        let moveCell = document.querySelector(`[data-chess="${index}"]`);
+                        moveCell.classList.add('blue-cell');
+                        moveCell.firstChild.innerText = '';
+                        moveCell.appendChild(knight);
+                        appendCommentNoBreak(' -> ' + index);
+                        let prevCell = document.querySelector(`[data-chess="${moves[thisIndex-1]}"]`);
+                        if (prevCell) {
+                            prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+                        };
+                    }, interval * (thisIndex));
+                });
+                interval = interval * (moves.length + 1);
+            };
+            setTimeout(function() {
+                lastMoveCell.classList.add('end-cell');
+                lastMoveCell.firstChild.innerText = '';
+                lastMoveCell.appendChild(knight);
+                // Append the ending move comment
+                let endMovesComment = document.createElement('span');
+                let endMovesArrow = document.createElement('span');
+                endMovesArrow.classList.add('comment-text');
+                endMovesArrow.innerText = ' -> '
+                endMovesComment.classList.add('comment-text');
+                endMovesComment.classList.add('end-move');
+                endMovesComment.innerText = lastMove;
+                document.getElementById('comment').appendChild(endMovesArrow);
+                document.getElementById('comment').appendChild(endMovesComment);
+                
+                let prevCell = document.querySelector(`[data-chess="${moves[moves.length - 1]}"]`);
+                if (prevCell !== null) {
+                    prevCell.firstChild.innerText = `${prevCell.getAttribute('data-chess')}`;
+                }
+                if (moves.length === 0) {
+                    firstMoveCell.firstChild.innerText = `${firstMoveCell.getAttribute('data-chess')}`
+                };
+            }, interval - 500);
+        }, interval);
+    }, 500);
 };
 
 function beginGame() {
-    // Declare variables
-    // Instantiate the Graph to represent the board
     const boardGraph = makeGraph();
     // make the knight icon
     const knight = makeKnight();
     // Board array for printing and making cells
-    const board = [
-        [0,1,2,3,4,5,6,7],
-        [8,9,10,11,12,13,14,15],
-        [16,17,18,19,20,21,22,23],
-        [24,25,26,27,28,29,30,31],
-        [32,33,34,35,36,37,38,39],
-        [40,41,42,43,44,45,46,47],
-        [48,49,50,51,52,53,54,55],
-        [56,57,58,59,60,61,62,63]
-    ]
+    const board = [[0,1,2,3,4,5,6,7],
+                  [8,9,10,11,12,13,14,15],
+                  [16,17,18,19,20,21,22,23],
+                  [24,25,26,27,28,29,30,31],
+                  [32,33,34,35,36,37,38,39],
+                  [40,41,42,43,44,45,46,47],
+                  [48,49,50,51,52,53,54,55],
+                  [56,57,58,59,60,61,62,63]]
     // Welcome message
     let welcomeMessage = `Welcome to Knights Travails!
 
@@ -410,7 +384,6 @@ function beginGame() {
     printBoard(board);
     // Get all the cells
     const cells = document.querySelectorAll('.cell');
-    
     // Iterate through each cell 
     cells.forEach(function(cell) {
         let coord = cell.getAttribute('data-coord');
@@ -426,16 +399,12 @@ function beginGame() {
             let thisVertex = boardGraph.list[coord]
             // If start is not defined, set this coord to start
             if (start === null) {
-                cells.forEach(function(cell) {
-                    cell.style.backgroundColor = 'white';
-                });
                 resetCells();
                 start = thisVertex;
                 startCoord = chesscoord;
-                cell.style.backgroundColor = 'yellowgreen';
+                cell.classList.toggle('start-cell');
                 cell.firstChild.innerText = '';
                 cell.appendChild(knight);
-                updateComment();
                 updateComment('Start: ' + startCoord + `
 
                 ` + 'Please select an ending square...');
@@ -444,12 +413,10 @@ function beginGame() {
             } else if (start !== null && end === null) {
                 let end = thisVertex;
                 endCoord = chesscoord;
-                cell.style.backgroundColor = '#eb4934';
-                updateComment(`Start: ${startCoord} -> End: ${endCoord}
-                
-                Moving the Knight from ${startCoord} to ${endCoord}...`); 
+                cell.classList.toggle('end-cell');
+                updateComment(`Moving the Knight from ${startCoord} to ${endCoord}...`); 
                 // Make the traversal
-                setTimeout(playTurn, 1000, boardGraph, start, end);
+                setTimeout(playTurn, 500, boardGraph, start, end);
                 // reset start to null for next click
                 start = null;
                 return;
@@ -458,5 +425,4 @@ function beginGame() {
     });
 };
 
-
-export { beginGame, updateComment, chessify };
+export { beginGame, updateComment, appendComment, chessify };

@@ -1,4 +1,4 @@
-import { updateComment, chessify } from './displayControls';
+import { chessify } from './displayControls';
 
 const adjacencyList = {
     '0': [10, 17],
@@ -89,7 +89,6 @@ class Vertex {
     }
 };
 
-
 class Graph { 
     constructor(numVertices, list) {
         this.vertices = numVertices;
@@ -140,78 +139,61 @@ class Graph {
                 if (thisNode.level === 0) {
                     moves = [startVertex.coord]; 
                     chessify(moves);
-                    updateComment(`Start: ${moves[0]} -> End: ${moves[0]}
-                    
-                    You were already here!`);
                 }
                 if (thisNode.level === 1) {
-                    moves = [startVertex.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.coord];
                     moves = chessify(moves);
-                    updateComment(`Start: ${moves[0]} -> End: ${moves[1]}
-                    
-                    You made it in ${thisNode.level} move!
-
-                    Move: ${moves[0]} -> ${moves[1]}`);          
                 } else if (thisNode.level === 2) {
-                    moves = [startVertex.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = chessify(moves);
-                   updateComment(`Start: ${moves[0]} -> End: ${moves[2]}
-                    
-                   You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]}`);
                 } else if (thisNode.level === 3) {
-                    moves = [startVertex.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = chessify(moves);
-                    updateComment(`Start: ${moves[0]} -> End: ${moves[3]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]}`);
                 } else if (thisNode.level === 4) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = chessify(moves);
-                    updateComment(`Start: ${moves[0]} -> End: ${moves[4]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]}`);
                 } else if (thisNode.level === 5) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];                   
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, thisNode.coord];                   
                     moves = chessify(moves);
-                    updateComment(`Start: ${moves[0]} -> End: ${moves[5]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]} -> ${moves[5]}`);
                 } else if (thisNode.level === 6) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = chessify(moves);
-                    updateComment(`Start: ${moves[0]} -> End: ${moves[6]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]} -> ${moves[5]} -> ${moves[6]}`);
                 } else if (thisNode.level === 7) {
-                    moves = [startVertex.coord, thisNode.parent.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.parent.coord, thisNode.parent.parent.parent.coord, thisNode.parent.parent.coord, thisNode.parent.coord, thisNode.coord];
+                    moves = [startVertex.coord, 
+                            thisNode.parent.parent.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.parent.coord, 
+                            thisNode.parent.parent.parent.coord, 
+                            thisNode.parent.parent.coord, 
+                            thisNode.parent.coord, 
+                            thisNode.coord];
                     moves = chessify(moves);
-                    updateComment(`Start: ${moves[0]} -> End: ${moves[7]}
-                    
-                    You made it in ${thisNode.level} moves!
-                    
-                    Moves: ${moves[0]} -> ${moves[1]} -> ${moves[2]} -> ${moves[3]} -> ${moves[4]} -> ${moves[5]} -> ${moves[6]} -> ${moves[7]}`);
                 };
             };
         };
-        // End traversal after going through all nodes
         return moves;
     };
 
-    getMoves() {
-        return moves;
-    };
-
-    
 };
 
 export { adjacencyList, Graph, Vertex }

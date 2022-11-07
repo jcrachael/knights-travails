@@ -59,7 +59,6 @@ body {
 
 .cell {
     border: 1px black solid;
-    background-color: #fff;
     box-sizing: border-box;
     height: 68.75px;
     width: 68.75px;
@@ -69,13 +68,6 @@ body {
     cursor: pointer;
 }
 
-.cell:hover {
-    background-color: rgba(144,144,144,0.3);
-}
-
-.cell:active {
-    background-color: rgba(144,144,144,0.5);
-}
 
 .knight {
     width: 50px;
@@ -86,7 +78,46 @@ body {
 }
 
 #comment {
+
     height: 130px;
+
+}
+
+.comment-text {
+    font-size: 12pt;
+    margin: 14pt auto;
+}
+
+.start-move {
+    font-size: 16pt;
+    color: yellowgreen;
+    font-weight: bold;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.lightgray {
+    background-color: lightgray;
+}
+
+.start-cell {
+    background-color: yellowgreen;
+}
+
+.end-cell {
+    background-color: #eb4934;
+}
+
+.blue-cell {
+    background-color: cornflowerblue;
+}
+
+.end-move {
+    font-size: 16pt;
+    color: #eb4934;
+    font-weight: bold;
 }
 
 header {
